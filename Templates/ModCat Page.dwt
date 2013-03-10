@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- TemplateBeginEditable name="doctitle" -->
+<TITLE>Modernist Cat: mid-century design for you and your pet</TITLE>
+
+<!-- TemplateEndEditable -->
+
+<META NAME="Description" CONTENT="Modernist Cat handcrafts pet furniture designed to combine a pet's needs with mid-century modern style.  We've engineered function and form into every detail to produce furniture-quality products that fit perfectly into contemporary homes.">
+<META NAME="Author" CONTENT="modernistcat@gmail.com">
+<META NAME="Keywords" CONTENT="Litter Box Furniture, Litter Box Enclosure, Litter Hider, Cat Litter Box, Cat Litter Box Cover, Cat Litter Cover, Modern Cat, Modern Cat Litter Box, Pet Furniture, Modern Pet Furniture, Modern Cat Furniture, Modern Cat Products, Modern Cat Litter Box Cover, Wooden Litter Box Cover, cat, cat furniture, cat house, modern cat, cat perch, catwalk, cat bed, cat condo, design, mid century, cat products, feline, cat scratcher, pet lover, sphynx, retro cat">
+
+
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script src="/js/jquery-ui-1.10.0.custom.min.js"></script>
+<script src="/js/jquery.tools.min.js"></script>
+
+<script src="/js/jquery.scrollTo-1.4.2-min.js"></script>
+<script src="/js/jquery.localscroll-1.2.7-min.js"></script>
+
+<script type="text/javascript" src="js/jquery.ui.button.min.js"></script>	
+<link rel="stylesheet" type="text/css" href="/Crystal/modernist_cat copy/css/fonts/stylesheet.css"/>
+<link rel="stylesheet" type="text/css" href="/Crystal/modernist_cat copy/css/modernist_cat_brown.css"/>	
+    
+<link rel="stylesheet" type="text/css" href="/css/jquery.ui.button.css">
+	
+    <link rel="stylesheet" type="text/css" href="css/custom-theme/jquery-ui-1.10.0.custom.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' type='text/css'>
+    
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15944355-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>  
+    <script type="text/javascript" charset="utf-8">
+try {
+var pageTracker = _gat._getTracker("UA-123456-78");
+var ref = document.referrer;
+if (ref.search(/images.google/) != -1 && ref.search(/prev/) != -1) {
+var regex = new RegExp("images.google.([^\/]+).*&prev=([^&]+)");
+var match = regex.exec(ref);
+pageTracker._clearOrganic();
+pageTracker._addOrganic("images.google."+ match[1],"q");
+pageTracker._setReferrerOverride("http://images.google." + match[1] + unescape(match[2]));
+}
+pageTracker._trackPageview();
+} catch(err) {}
+</script> 
+
+
+
+
+
+
+<!-- TemplateBeginEditable name="head" -->
+<script src="js/jquery.tools-home.min.js"></script>
+<!-- TemplateEndEditable -->
+</head>
+
+<!-- TemplateBeginEditable name="body class" -->
+<body>
+<!-- TemplateEndEditable -->
+<div class="header_bg"><div class="tagline_bg"><div class="main">
+    <div class="header"><a href="/index.html"><img src="css/images/logo.png" alt="modernist cat - the litter box goes mid-century modern" /></a>
+   
+  <div class="tagline"><img src="css/images/logo_tagline.png" alt="the litter box goes mid-century modern" />
+  <div class="contact"> <a href="contact.html">about us</a> | <a href="faq.html">FAQ's</a></div>
+    </div></div>
+<!-- TemplateBeginEditable name="main content" -->
+
+
+
+<!-- TemplateEndEditable -->
+<div id="footer">Copyright 
+	<script type="text/javascript">
+
+var d = new Date();
+document.write(d.getFullYear());
+
+</script>  Modernist Cat | site designed and developed by <a href="mailto:patty.ohara@gmail?subject=modernistcat">Patty O'Hara</a></div>
+</div>	
+</div><!-- end main -->
+</div><!-- end tagline -->
+</div>
+<!-- end header -->
+
+
+
+<!-- javascript coding -->
+<script>
+// execute your scripts when the DOM is ready. this is mostly a good habit
+$(document).ready(function() {
+
+	// initialize scrollable
+	$(".scrollable").scrollable();
+	$("#slideshow img[title]").tooltip();
+	
+
+
+});
+</script>
+
+
+
+
+</body>
+</html>

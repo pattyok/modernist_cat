@@ -157,7 +157,7 @@ for (var i=1; i < cloth.length; i++) {
 * @param string value - Example fabric2
 */
 function getIdFromClothValue(value) {
-	return value.substring(5);
+	return value.substring(("cloth").length);
 }
 function getIdFromClothName(name) {
 	var id = 0;
@@ -321,7 +321,7 @@ function displaylaminate() {
 			
 			if (laminateValue.indexOf && laminateValue.indexOf('laminate') >= 0 && laminateValue != 'laminateNone') {
 				var laminateId = getIdFromlaminateValue(laminateValue);
-				console.info(laminateValue + ' = laminateValue, ' + laminateId + ' = laminateId');
+				
 				laminateName = laminate[laminateId].name;
 				$('.seltxt_laminate').text(laminateName);
 					if (laminateCharge > 0) {	
@@ -436,6 +436,110 @@ function displayFleece() {
 				$('#sel_fleece').css('background', 'none');
 			}
 }
+/*------------------------ Carpet Swatches -------------------------*/
+
+
+var carpet = [0, //ignore CSS naming start with 1
+			   {name: 'Bark', sprite: -25}, // id: 1
+			   {name: 'Teal', sprite: -160},
+			   {name: 'Tangerine', sprite: -325},
+			   {name: 'Bone', sprite: -475},
+			   {name: 'Kiwi', sprite: -625},
+			   
+];
+
+
+var carpetName = "None";
+
+var carpetIcons = [];
+for (var i=1; i < carpet.length; i++) {
+    carpetIcons.push({find: '.carpet' + i});
+}
+					
+/**
+* @param string value - Example fabric2
+*/
+function getIdFromCarpetValue(value) {
+	
+	return value.substring(("carpet").length);
+}
+function getIdFromCarpetName(name) {
+	var id = 0;
+	for (var i = 0; i < carpet.length; i++) {
+	    if (name == carpet[i].name) {
+		    id = i;
+			break;
+		}
+	}
+	return id;
+}
+function showcarpetIcons() {
+			for (var i=1; i < carpet.length; i++) {
+				
+				
+	      		$('body .carpet' + i + ' .ui-selectmenu-item-icon').css('background', 'url(css/images/carpet/carpet.jpg) 0  ' + carpet[i].sprite + 'px no-repeat');                                       
+		
+	    	}
+			}
+/* Setup Carpet swatches on the dropdown */
+function setupCarpet() {
+var carpetOptions = '<option id="carpetNone" value="None" class="">Scratch Surface Options</option>';
+for (var i=1; i < carpet.length; i++) {
+	   			
+				carpetOptions += '<option id="carpet' + i + '" value="' + carpet[i].name + '" class="carpet' + i + '">' + carpet[i].name + '</option>';
+				
+			}
+                    
+			$('#carpet').append(carpetOptions);
+	   		
+			$('select#carpet').selectmenu({
+				style:'dropdown',
+				icons: carpetIcons,
+				width:225,
+				maxHeight:300
+				
+			});
+			
+			
+			
+			showcarpetIcons();
+			
+			/* Setup Carpet Samples */
+			var carpetSamples = '<p>Choose a carpet tile for the scratcher.</p><ul class="col">'  
+			for (var i=1; i< carpet.length; i++) {
+			
+			carpetSamples +='<li class="option large"><a href="#" class="Sample_link" style="border: 1px solid gray; background: url(css/images/carpet/carpet.jpg) 0  '  + carpet[i].sprite + 'px no-repeat"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">' + carpet[i].name + '</span></a><input type="hidden" name="'  + carpet[i].name + '" value="' + carpet[i].name + '" /></li>'
+			
+			}
+			carpetSamples += '</ul>'
+			
+			$('#dialog_carpet').append(carpetSamples);
+
+}
+// Switch carpet swatch on the viewer
+function displayCarpet() {
+		    carpetValue = $('#carpet option:selected').attr('id');
+			
+			if (carpetValue.indexOf && carpetValue.indexOf('carpet') >= 0 && carpetValue != 'carpetNone') {
+				var carpetId = getIdFromCarpetValue(carpetValue);
+				
+				carpetName = carpet[carpetId].name;
+				$('.seltxt_carpet').text(carpetName);
+					if (carpetCharge > 0) {	
+						carpetPrice = carpetCharge;
+						$('.seltxt_carpet').append(' (+$' + carpetPrice + ')');
+					}
+		        $('#sel_carpet').css('background', 'url(css/images/carpet/carpet.jpg) 0  ' + carpet[carpetId].sprite + 'px no-repeat');
+			} else {
+			carpetName = "None";	
+			}
+			if (carpetValue == "carpetNone") {
+			 	carpetPrice = 0;
+				$('.seltxt_carpet').text("None")
+				$('#sel_carpet').css('background', 'none');
+			}
+}
+
 
 /*------------------------entrance Swatches -------------------------*/
 var entrance = [0, //ignore CSS naming start with 1
@@ -515,10 +619,9 @@ for (var i=1; i < entrance.length; i++) {
 function displayentrance() {
 		    entranceValue = $('#entrance option:selected').attr('id');
 			
-			console.log('entranceValue', entranceValue);
+		
 			if (entranceValue.indexOf && entranceValue.indexOf('entrance') >= 0 && entranceValue != 'entranceNone') {
 				var entranceId = getIdFromentranceValue(entranceValue);
-				console.log(entranceValue, ' = entranceValue, ', entranceId, ' = entranceId');
 				
 				
 				entranceName = (entrance[entranceId].name);
@@ -547,13 +650,16 @@ function displayPreview() {
 				previewItem = "_" + clothName.toLowerCase().replace(/ /g, '-');
 			} else if ($('.laminate_disp').is(':visible') && (laminateName != "None")) {
 					previewItem = "_" + laminateName.toLowerCase().replace(/ /g, '-');
-			} else {
+			} else if ($('.carpet_disp').is(':visible') && (carpetName != "None")) {
+					previewItem = "_" + carpetName.toLowerCase().replace(/ /g, '-');
+			}
+			 else {
 					previewItem = "";
 			}
 			//console.info(clothName);		
 			
 			var previewImage = (imagePath + previewItem + '.jpg'); 
-			console.log('previewImage =', previewImage, 'laminateName', laminateName);
+			
 			$('#circa50_img').attr('src',previewImage);
 				
 }
@@ -592,7 +698,9 @@ function displayPreview() {
           /*-----------------------------------------------------------------*/	
           /*-------------------- SET UP THE ITEMS ---------------------------*/
           /*-----------------------------------------------------------------*/
-var clothCharge = 0;
+var cloth = 0;
+var carpetCharge = 0;
+
 var laminateCharge = 0;
 var base2Charge = 0;
 var baseCharge = 0;
@@ -667,8 +775,7 @@ var litterpanCharge = 0;
 		$('#buy_button').html("<input type='hidden' name='on0' value='Entrance' /><input type='hidden' name='on2' value='Grass Cloth' /><input type='hidden' name='on5' value='Lounge Pad' /><input type='hidden' name='on3' value='Fleece Pad' />");
 		
 		
-	} 
-	else if (itemValue == "circa50Diner") {
+	}  else if (itemValue == "circa50Diner") {
 	 	var itemBuy = "Circa 50: Diner";
 		$('.laminate_disp').show();
 		$('.litterpan_disp').hide();
@@ -680,7 +787,19 @@ var litterpanCharge = 0;
 		$('#buy_button').html("<input type='hidden' name='on4' value='Laminate' />");
 		
 		
-	}    else  {
+	}   else if (itemValue == "console") {
+	 	var itemBuy = "Console Table/Scratcher";
+	 	$('.carpet_disp').show();
+		
+		var startPrice = 399;
+		var shippingPrice = 0;
+		var itemPrice = startPrice;
+		var imagePath = 'css/images/preview/console';	
+		$('#buy_button').html("");
+		$('#buy_button').html("<input type='hidden' name='on1' value='Carpet Tile' />");
+		
+		
+	}  else  {
 		
 		$('#fabric-field').show();
 		
@@ -722,6 +841,8 @@ var litterpanCharge = 0;
 		setupFabric();
 		setupCloth();
 		setupFleece();
+		setupCarpet();
+		
 		
 		setuplaminate();
 		setupentrance();
@@ -749,7 +870,8 @@ var litterpanCharge = 0;
 		    itemValue = houseValue;
 			
 			displayFabric();
-			displayCloth();		
+			displayCloth();
+			displayCarpet();		
 			displayLitterpan();
 			displayFleece();			
 			displaylaminate();
@@ -773,20 +895,21 @@ var litterpanCharge = 0;
 		$('#dialog_carpet').dialog({
 			autoOpen: false,
 			height: 600,
-			width: 500,
+			width: 575,
 			minHeight: 500,
 			resizable: false
 			});
 		var openerCarpetReady = false;
 		$('#opener_carpet').click(function() {
-		    
+		    //console.log("carpet opener");
 		    $('#dialog_carpet').dialog('open');
+			//console.log('openerCarpetReady=');
 		    if (openerCarpetReady == false) {
 			    openerCarpetReady = true;
 				
+				//$(document).on('click', '.Sample_link', function(){
 				$('.Sample_link', $('#dialog_carpet')).click(function(){
-	    			//alert("We got called");
-		
+	    			
 	   				var link = $(this);
 					var selectedValue = $('input', link.parent()).val();
 					$('#carpet-button').remove();
@@ -807,7 +930,45 @@ var litterpanCharge = 0;
 		return false;
 		});
 	});//end carpet dialog
+	$(function() {
+		$('#dialog_carpet2').dialog({
+			autoOpen: false,
+			height: 600,
+			width: 575,
+			minHeight: 500,
+			resizable: false
+			});
+		var openerCarpet2Ready = false;
+		$('#opener_carpet2').click(function() {
+		    //console.log("carpet2 opener");
+		    $('#dialog_carpet2').dialog('open');
+			//console.log('openerCarpetReady=');
+		    if (openerCarpet2Ready == false) {
+			    openerCarpet2Ready = true;
+				
+				//$(document).on('click', '.Sample_link', function(){
+				$('.Sample_link', $('#dialog_carpet2')).click(function(){
+	    			
+	   				var link = $(this);
+					var selectedValue = $('input', link.parent()).val();
+					$('#carpet2-button').remove();
+					//console.info("Trying to set the value to ", selectedValue);
+					$('select#carpet2').val(selectedValue);
+
+					$('select#carpet2').selectmenu({
+					    style:'dropdown',
+					    icons: carpet2Icons
+					});
+					showcarpet2Icons();
+				    displayVals();
+				    $('#dialog_carpet2').dialog('close');
 		
+				return false;
+				});// .Sample_link .click
+		    } // if openerCarpetReady == false
+		return false;
+		});
+	});//end carpet2 dialog	
 	
 	//$.fx.speeds._default = 1000;
 	$(function() {
