@@ -1,0 +1,886 @@
+@charset "UTF-8";
+/* ----CSS RESET FROM ERIC MEYER v1.0 | 20080212 ---------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*------------------------ END CSS RESET ----------------------*/
+
+/*----- GLOBAL ELEMENTS ----*/
+
+html {
+height:100%;
+}
+
+body {
+text-align:center;
+font-family: Verdana, Arial, sans-serif;
+font-size:11px;
+background:#545555 url(images/body_bg.png);
+background-position:top;
+background-repeat:repeat-x;
+height:100%; 
+min-height:100%;
+position:relative; 
+color:#31312e;
+}
+
+a {
+text-decoration:none;
+color:#778a38;
+font-weight:bold;
+}
+
+a:visited {
+color:#778a38;
+}
+a:hover {
+color:#b2d235;
+text-deccoration:none;
+}
+
+h1 {
+font-size:150%;
+line-height:2.5;
+}
+
+h2 {
+font-size:125%;
+line-height:2.5;
+}
+/* main section */
+.main {
+background-color:#FFFFFF;
+text-align: left;
+margin-left:auto;
+margin-right:auto;
+width:760px;
+
+padding-left:0px;
+height:1150px;
+position:relative;
+}
+
+/* --- HEADER -- */
+
+.header {
+height:51px;
+border-bottom:1px solid #31312e;
+position:relative;
+}
+
+.header img {
+padding-left:15px;
+}
+
+.tagline {
+margin-top:2px;
+border-top:2px solid #31312e;
+padding-left:10px;
+}
+
+/* --- Various Text Styles --- */
+#footer {
+	color:#333333;
+	text-align:center;
+	font-size:90%;
+	margin-top:10px;
+	margin-bottom:5px;
+	}
+	
+.more {
+	position:absolute;
+	bottom:3px;
+}
+
+.text {
+color:#31312e;
+font-size:11px;
+}	
+
+.breadcrumb {
+font-size:10px;
+margin-left:40px;
+margin-top:15px;
+}
+/* --- SCROLLABLE BOXES --- */
+.green {
+background-color:#b3d335;
+}
+.grey {
+background:url(images/sm_box_bg.png);
+	background-color:#656565;
+	
+	background-position:bottom;
+	background-repeat:repeat-x;
+	color:#FFFFFF;
+}
+
+
+
+
+
+/* ----- box styles -----*/
+.rnd_border {
+border:1px solid #31312e;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+	
+}
+
+.small_box {
+width: 334px;
+min-height: 150px;
+display:inline-block;
+float:left;
+}
+
+.box_left {
+margin-right:7px;
+}
+
+.large_box {
+width: 680px;
+padding-top:0px;
+text-align:left;
+margin-right:auto;
+margin-left:auto;
+margin-top:7px;
+} 
+
+.tall {
+height:475px;
+
+}
+.box_contents {
+border-top:2px solid #31312e; margin-top:2px;
+line-height:1.2;
+padding:5px;
+}
+
+.box_contents li {
+list-style:square;
+color:#333333;
+margin-bottom:3px;
+
+}
+
+.box_contents ul {
+float: left;
+margin-left:20px;
+margin-top:5px;
+}
+
+
+
+
+/*-- box headers --*/
+.header_txt {
+/*background:url(images/headers.png); height:20px; background-repeat:no-repeat; width:100%*/
+font-size:14px;
+font-weight:bold;
+color:#31312e;
+height:16px;
+padding-top:5px;
+padding-left:5px;
+}
+.products { background-position: 0 -7px;}
+
+.aboutus {background-position: 0 -35px; color:#ffffff;}
+
+.shop {background-position: 0 -63px;}
+
+.contact {
+background-position: 0 -87px;
+position:absolute;
+right:30px;
+width:100px;
+bottom:0;
+padding-bottom:1px;
+font-size:10px;}
+
+
+.inlineimage {
+float:left;
+padding-right:8px;
+border-color:transparent;
+width:95px;
+padding-top:5px;
+padding-bottom:15px;
+}
+
+/*--- HOME PAGE --*/
+#shop ul {	
+		width:100%;
+		margin:0 auto;	
+	}
+	
+	#shop li {	
+		background-color:#cccccc;
+		float:left;
+		padding:5px;
+		width:205px;
+		height:140px;
+		list-style-type:none;
+		position:relative;
+		font-size:90%;
+		margin:3px;
+		border:1px solid #656565;
+	}
+	
+	#shop a {
+		
+		display:block;
+		
+		position:relative;
+		word-spacing:-2px;
+		
+		text-decoration:none;
+	}	
+	
+	
+	#shop img {
+		background-color:#fff;
+		border:1px solid #656565;
+		margin:3px 0 5px 0px;
+		padding:4px;		
+		display:block;
+		width:95px;
+		float:left;
+	}
+	
+	#shop strong {
+		display:block;		
+		font-size:13px;
+	}
+	
+	
+	#footer, .clearboth {
+	clear:both;
+	}
+	
+	.product_desc {
+	float:left;
+	padding-left:6px;
+	width:94px;
+	
+	color:#31312e;
+	padding-top:4px;
+	}
+/*-- CONTACT PAGE  --*/
+#contact p {
+float:left;
+}
+#faq {
+margin-left:40px;
+margin-right:40px;
+line-height:1.2
+}
+
+
+.left_col {
+float:left;
+width:500px;
+padding-left:10px;
+padding-top:5px;
+margin-left:30px;
+}
+.right_col {
+float:left;
+padding-left:20px;
+}
+
+.contact_box {
+border:1px solid #cccccc;
+display:block;
+padding:5px;
+margin-top:5px;
+float:left;
+}
+.contact_box ul{
+float:left;
+}
+
+.contact_box li {
+line-height:1.4;
+}	
+
+img.contact_img {
+		background-color:#fff;
+		border:1px solid #656565;
+		margin:0px 16px 5px 0px;
+		padding:4px;		
+		display:block;
+		float:left;
+		width:150px; 
+		
+	}
+
+/*-- PRODUCTS PAGE --*/
+
+.description {
+position:absolute;
+margin: -7px 10px 10px 348px;
+background-color:#FFFFFF;
+font-size:11px;
+width:290px;
+border:6px solid #b3d335;
+
+line-height:1.2;
+}
+
+.description_inner {
+padding:0px 6px;
+border:1px solid #656565;
+}
+
+.description ul {
+ list-style:disc;
+ margin-top:0px;
+ margin-bottom:10px;
+ margin-left:15px;
+}
+
+.description p {
+margin-top:10px;
+}
+
+.product {
+background-color:#778a2b;
+
+text-align:center;
+color:#ffffff;
+font-size:20px;
+font-weight:bold;
+padding:3px 6px 3px 6px;;
+
+display:inline;
+margin-top:-48px;
+margin-left:40px;
+position:absolute;
+top:22px;
+right:11px;
+border-color:#656565;
+border-width:1px;
+white-space:nowrap;
+}
+.small {
+font-size:9px;
+}
+
+
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip {
+	display:none;
+	background-color:#778a2b;
+	font-size:12px;
+	position:relative;
+	margin-top:300px;
+	width:160px;
+	padding:3px;
+	color:#fff;
+	border:1px solid #b3d335;
+	font-weight:bold;
+}
+
+/*-- scrollto --*/
+#modmover, #casestudy, #dotden {
+position:absolute;
+top:0;
+
+}
+
+/*/-------------Scrollable ------------------*/
+
+/* these make the scroll-y go */
+
+.scrollable_cont {
+/* outside container for the content */
+	/* required settings */
+	
+	width: 680px;
+	height:375px;
+
+	/* custom decorations */
+	
+	
+	padding-top:20px;
+	text-align:left;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:5px;
+	
+}
+
+.scrollable {
+
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 680px;
+	height:350px;
+
+	/* custom decorations */
+	border-top:1px solid #31312e;
+	border-bottom:1px solid #31312e;
+	margin-top:-10px;
+		
+	
+}
+
+/*
+	root element for scrollable items. Must be absolutely positioned
+	and it should have a extremely large width to accomodate scrollable items.
+	it's enough that you set the width and height for the root element and
+	not for this element.
+*/
+.scrollable .items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+
+
+.single {
+/*  when working with a single image */
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 360px;
+	height:360px;
+
+	/* custom decorations */
+	border-top:none;
+	border-bottom:none;
+	margin-top:0px;
+}
+
+
+.items div {
+	float:left;
+	width:680px;
+}
+
+/* single scrollable item */
+.double img {
+	float:left;
+	margin:20px 5px 0px 21px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:300px;
+	height:300px;
+	
+}
+
+/* single scrollable item */
+.single img {
+	float:left;
+	margin:0px 5px 0px 0px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:330px;
+	cursor:pointer;
+	
+	
+}
+
+/* active item */
+.scrollable .active {
+	border:2px solid #000;
+	position:relative;
+	cursor:default;
+}
+
+/* this makes it possible to add next button beside scrollable */
+.scrollable {
+	float:left;	
+}
+
+/* prev, next, prevPage and nextPage buttons */
+a.browse {
+	background:url(images/layout/scroll_btn.png) no-repeat; 
+	
+	position:relative;
+	width:40px;
+	height:40px;
+	float:left;
+	top:180px;
+	z-index:2;
+	cursor:pointer;
+	font-size:1pt;
+	
+}
+
+/* right */
+a.right 				{ 
+float:right;
+background-position: 0px 0px; 
+clear:right; 
+margin-right: 15px;
+}
+a.right:hover 		{ background-position:0px -40px;}
+a.right:active 	{ background-position: 0px -80px; } 
+
+
+/* left */
+a.left				{ 
+float:left;
+background-position: -40px 0px; 
+clear:left; 
+margin-left: 15px;
+ } 
+a.left:hover  		{ background-position:-40px -40px; }
+a.left:active  	{ background-position:-40px -80px; }
+
+/* up and down */
+a.up, a.down		{ 
+	background:url(../images/carpet/_MG_3453.jpg) no-repeat; 
+	float: none;
+	margin: 10px 50px;
+}
+
+/* up */
+a.up:hover  		{ background-position:-30px 0; }
+a.up:active  		{ background-position:-60px 0; }
+
+/* down */
+a.down 				{ background-position: 0 -30px; }
+a.down:hover  		{ background-position:-30px -30px; }
+a.down:active  	{ background-position:-60px -30px; } 
+
+
+/* disabled navigational button */
+a.disabled {
+	visibility:hidden !important;		
+} 	
+
+/** MODIFICATIONS FOR PROUCTS PAGE **/
+/* prev, next, prevPage and nextPage buttons */
+.single_nav {
+width:300px;
+text-align:center;
+}
+
+.single_nav a.browse {
+	background:url(images/layout/scroll_btn.png) no-repeat;
+	position:relative;
+	width:20px;
+	height:20px;
+	float:left;
+	top:0px;
+	z-index:2;
+	cursor:pointer;
+	font-size:1pt;
+}
+
+/* right */
+.single_nav a.right 				{ 
+float:left;
+background-position: -80px 0px; 
+
+}
+.single_nav a.right:hover 		{ background-position:-80px -20px; }
+.single_nav a.right:active 	{ background-position:-80px -40px; } 
+
+
+/* left */
+.single_nav a.left				{ 
+float:left;
+background-position: -100px 0px; 
+clear:left; 
+margin-left: 0px;
+ } 
+.single_nav a.left:hover  		{ background-position:-100px -20px; }
+.single_nav a.left:active  	{ background-position:-100px -40px; }
+
+	
+
+/*********** navigator ***********/
+
+
+/* position and dimensions of the navigator */
+.navi {
+	
+	height:20px;
+	/*width:53px;*/
+	float:left;
+}
+
+
+/* items inside navigator */
+.navi a {
+	width:10px;
+	height:10px;
+	float:left;
+	margin:3px;
+	background: transparent url(images/layout/navigator.png) 0 0 no-repeat;
+	display:block;
+	font-size:1px;
+	cursor:pointer;
+}
+
+/* mouseover state */
+.navi a:hover {
+	background-position:0 -10px;      
+}
+
+/* active state (current page state) */
+.navi a.active {
+	background-position:0 -20px;     
+} 	
+
+
+	
+	#main_navi li {
+		
+		border-top:1px solid #666;
+		
+		color:#FFFFFF;
+		font-size:12px;
+		height:150px;
+		list-style-type:none;
+		padding:10px;
+		width:190px;
+		cursor:pointer;
+	}
+	
+	#main_navi li:hover {
+		
+	}
+	
+	#main_navi li.active {
+		
+	}
+	
+	#main_navi img {
+		float:left;
+		margin-right:10px;
+	}
+	
+	#main_navi strong {
+		display:block;
+	}
+	
+	#main div.navi {
+		margin-left:250px;
+		cursor:pointer;
+	}
+ 
+	#main {
+		position:relative;
+		height: 1000px;
+		
+	}
+	/* root element for pages */
+	#pages {
+		position:absolute;
+		height:20000em;
+	}
+	
+	
+	
+	/* single page */
+	.page {
+		padding:0 10px 10px 10px;
+		height: 350px;
+		width:760px;
+	}
+	
+
+	/* navigation */
+	#nav {
+		background:#ddd;
+		border-bottom:1px solid #CCCCCC;
+		height:600px;	
+		width:100%px;
+		border-top:1px solid #CCCCCC;
+		padding-top:10px;
+	}
+	
+	#nav ul {	
+		width:600px;
+		margin:auto;	
+	}
+	
+	#nav li {	
+		
+		float:left;
+		margin:4px;
+		border:1px solid #656565;
+		
+		width:180px;
+		/*padding-left:1px;
+		width:175px;
+		list-style-type:none;
+		text-align:center;
+		margin-top:0px;
+		border-right:1px solid #ddd;*/
+	}
+	
+	#nav a {
+		color:#333333;
+		padding:10px;
+		display:block;
+		
+		position:relative;
+		word-spacing:-2px;
+		font-size:11px;		
+		height:168px;
+		text-decoration:none;
+	}	
+	
+	#nav a.current {
+		background:#111;	
+	}
+	
+	#nav img {
+		background-color:#fff;
+		border:1px solid #ccc;
+		margin:0px 0 3px 0px;
+		padding:4px;		
+		display:block;
+		width:150px;
+	}
+	
+	#nav strong {
+		display:block;		
+		font-size:12px;
+	}
+	
+	/* panes */
+	#panes {
+		
+		
+		width:680px;	
+		height:400px;
+		margin-bottom:10px;
+		padding-bottom:20px;
+		
+		/* must be relative so the individual panes can be absolutely positioned */
+		position:relative;
+	}
+	
+	.configure #panes {
+	height:420px;
+	}
+	
+	/* crossfading effect needs absolute positioning from the elements */
+	#panes div.window {
+		display:none;		
+		position:absolute;
+		top:15px;
+		left:20px;
+		font-size:13px;
+		color:#444;	
+		width:650px; 
+	}
+	
+	#panes img {
+		float:left;
+		margin-right:20px;		
+	}
+	
+	#panes p.more {
+		color:#000;
+		font-weight:bold;
+		font-size:13px;
+	}
+	
+	#panes h3 {
+		margin:0 0 -5px 0;
+		font-size:22px;
+		font-weight:normal;
+	}
+	
+	.overlay {
+		display:none;
+		width:500px;
+		padding:20px;
+		background-color:#ddd;
+	}
+	
+	
+/*-- unknown --*/
+.button {
+position:relative;
+
+}
+.button a{
+display:inline-block;
+margin-bottom:10px;
+text-align:center;
+font-size:14px;
+font-weight:normal;
+padding:0px 6px 3px 6px;
+border: 1px solid #656565; 
+background: #778a2b url(images/ui-bg_highlight-hard_30_778a2b_1x100.png) 50% 50% repeat-x; 
+color: #ffffff;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+margin-left:15%;
+margin-right:20%;
+white-space:nowrap;
+}
+
+
+.button a:hover{
+background: none;
+background-color:#778a2b; 
+}
+
+/*-- end unknown --*/
+
+
+
+/*-- specific button styles --*/

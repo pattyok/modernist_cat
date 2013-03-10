@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+h2{
+position:relative;
+font: 16px Verdana, sans-serif;
+letter-spacing: 0px;
+color:#a4ca27;
+z-index:200;
+margin-left:10px; margin-bottom:12px; margin-top:-10px}
+
+.main {
+height:150%;
+}
+/* hide all options to begin then use jscript to show 
+
+.main, #fleece-field, #scratch-field, #finish-field, #fabric-field, #width-field, #entwidth-field, #felt-field, #loc-field, #smhole-field, #base-field, #sel_fleece, #sel_carpet, #sel_finish, #sel_fabric, #sel_felt, #sel_base,.sel_fleece, .sel_carpet, .sel_finish, .sel_fabric, .sel_felt, .sel_base,#edgy_img, #modmover_img, #atomic_img, #casestudy_img, #hideaway_img, #dotden_img, #lunar_img, #litter-scratch, #litter_price, #hideawaydel_img, .fleece_disp, .finish_disp, .fabric_disp, .width_disp, .entwidth_disp, .felt_disp, .loc_disp, .smhole_disp, .base_disp {
+
+display:none;
+}*/
+
+.main, #edgy_img, #modmover_img, #atomic_img, #casestudy_img, #hideaway_img, #dotden_img, #lunar_img, #litter-option, #fabric-option, #fabric-option2, #litter_price, #hideawaydel_img, .carpet_disp, .fleece_disp, .finish_disp, .width_disp, .entwidth_disp, .felt_disp, .entloc_disp, .smhole_disp, .base_disp, #carpet_add, #station_img, #benchcushion, .fabric_disp, .base_disp_station {
+
+display:none;
+}
+
+fieldset { border:0;  margin-bottom: 20px;}	
+label,select,.ui-select-menu { float: left; margin-right: 10px; }
+
+#house select {width:200px;}
+.ui-selectmenu-item-icon { margin-left:5px;}
+
+#sel_house {height:260px; width:260px; border:1px solid red; position:relative; left:160px; top:10px;}
+#dialog {height:500px; width:500px; }
+.option { }
+.option a {display:block; width:100px;height:75px;color:#493e31; font-weight:bold; text-decoration:none; position:relative; border:3px solid #d9d5d1; -moz-border-radius:2px; -webkit-border-radius:2px; }
+		
+.option a:hover {border:3px solid #eeeceb; }
+.optionText {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	position:absolute; 
+	bottom:0px; 
+	right:0px; 
+	
+	width:100%;
+	font-size:8px;
+	padding-bottom:2px;
+	padding-top:2px;
+	
+	}
+.optionTextbg {
+	background-color:#eeeceb;/* for IE */
+	filter:alpha(opacity=60);
+	/* CSS3 standard */
+	opacity:.6;
+}	
+.med a {width:130px;}
+.large a {height:130px; width:130px;}
+
+.col li {list-style:none; margin:5px;}
+.col {float:left; height:400px;}
+
+.ui-selectmenu-status {
+color:#493e31; text-decoration:none;}
+#house_dd .ui-selectmenu-status {
+color:#493e31; text-decoration:none;}
+.ui-selectmenu-status a:hover, .ui-selectmenu a:hover {
+color:#493e31; text-decoration:none;}
+
+		
+#form label {
+color:#eeeceb;
+height:14px;
+width:240px;
+margin-left:-10px;
+position:relative;
+line-height:0px;
+margin-bottom:-4px;
+margin-top:7px;
+}
+
+.label_note {
+display:block;
+padding-bottom:5px;
+color:#a49b93;
+}
+.ui-icon {
+margin-bottom:-3px;
+}
+
+label {
+font-weight:normal;
+}
+label a{
+position:absolute;
+right:0px;
+bottom:10px;
+font-weight:normal;
+
+color:#b3d335;
+}
+
+label a:hover {
+color:#778A38;
+}
+
+label a:visited {
+color:#b3d335;
+}
+
+#form {
+ 
+ width:250px;
+ float:left;
+ padding-left:10px;
+ padding-right:10px;
+ margin-left:10px;
+ position:relative;
+}
+
+
+#viewer {
+float:left;
+	width:380px;
+	border:1px solid #a49b93;
+	background-color:#eeeceb;
+	height:420px;
+	position:relative;
+	top:-30px;
+	line-height:1.2;
+}
+
+#viewer img {
+width:200px;
+float:left;
+}
+
+
+
+.viewer_rt {
+float: left;
+position:relative;
+border:none;
+width: 220px;
+height: 360px;
+left:40px;
+top:20px;
+}
+
+
+.item_sel dt {
+font-weight:bold;
+float:left;
+font-size:10px;
+}
+.item_sel dd {
+margin-left:45px;
+font-size:10px;
+}
+
+.price {
+
+font-weight:bold;
+margin-top:10px;
+}
+
+.buy {
+text-align:center;
+font: 16px 'EurostileRomanDTCRegular', Verdana, sans-serif;letter-spacing: 0;
+padding:0px 15px;
+margin-top:10px;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+white-space:nowrap;
+margin-left:auto;
+margin-right:auto;
+border: 1px solid #778a2b; 
+background-color: #a4ca27; 
+color: #493e31;
+curosor:pointer;
+
+}
+
+.buy:hover{
+background-color:#778a2b;
+color:#362f2d;
+border: 1px outset #a4ca27;
+}
+
+
+
+#selections {
+float:left;
+position:relative;
+margin-top:10px;
+left:25px;
+height:318px;
+}
+.selected {
+height:55px; 
+width:100px; 
+border:1px solid #675d52;
+text-align:right;
+vertical-align:bottom;
+padding:4px;
+position:relative;
+bottom:-5px;
+
+}
+
+#custom_finish{
+font-weight:normal;
+}
+
+
+	
+/*select with custom icons*/	
+.ui-selectmenu-item-icon { height: 24px; width: 50px; border:1px solid #282828;}
+body .natural .ui-selectmenu-item-icon, .Natural_sel { background: url(images/finishes/finishes.png) 0 -200px no-repeat; }
+body .oak .ui-selectmenu-item-icon, .Oak_sel { background: url(images/finishes/finishes.png) 0 -100px no-repeat; }
+body .walnut .ui-selectmenu-item-icon, .Walnut_sel { background: url(images/finishes/finishes.png) 0 0 no-repeat; }
+body .ebony .ui-selectmenu-item-icon, .Ebony_sel { background: url(images/finishes/finishes.png) 0 -300px no-repeat;}
+body .custom .ui-selectmenu-item-icon, .Custom_sel { background: url(images/finishes/finishes.png) 0 -400px no-repeat;}
+body .finish .ui-selectmenu-item-icon { background: url(images/finishes/finishes.png) 0 -400px no-repeat; }
+body .ui-select-item-icon { height: 24px; width: 50px; border:1px solid #009900}
+body .BlackCat .ui-selectmenu-item-icon, .BlackCat_sel { background: url(images/carpet/flor.jpg) 0  0 no-repeat;}
+body .BlackCat .ui-selectmenu-item-icon, .BlackCat_sel { background: url(images/carpet/flor.jpg) 0  0px no-repeat;}
+body .Siamese .ui-selectmenu-item-icon, .Siamese_sel { background: url(images/carpet/flor.jpg) 0  -100px no-repeat;}
+body .Chinchilla .ui-selectmenu-item-icon, .Chinchilla_sel { background: url(images/carpet/flor.jpg) 0  -200px no-repeat;}
+body .HummingBird .ui-selectmenu-item-icon, .HummingBird_sel { background: url(images/carpet/flor.jpg) 0  -300px no-repeat;}
+body .BetaFish .ui-selectmenu-item-icon, .BetaFish_sel { background: url(images/carpet/flor.jpg) 0  -400px no-repeat;}
+body .Chameleon .ui-selectmenu-item-icon, .Chameleon_sel { background: url(images/carpet/flor.jpg) 0  -500px no-repeat;}
+body .Guppy .ui-selectmenu-item-icon, .Guppy_sel { background: url(images/carpet/flor.jpg) 0  -600px no-repeat;}
+body .Iguana .ui-selectmenu-item-icon, .Iguana_sel { background: url(images/carpet/flor.jpg) 0  -700px no-repeat;}
+body .Gecko .ui-selectmenu-item-icon, .Gecko_sel { background: url(images/carpet/flor.jpg) 0  -800px no-repeat;}
+body .Ferret .ui-selectmenu-item-icon, .Ferret_sel { background: url(images/carpet/flor.jpg) 0  -900px no-repeat;}
+body .Parakeet .ui-selectmenu-item-icon, .Parakeet_sel { background: url(images/carpet/flor.jpg) 0  -1000px no-repeat;}
+body .Toucan .ui-selectmenu-item-icon, .Toucan_sel { background: url(images/carpet/flor.jpg) 0  -1100px no-repeat;}
+body .Grasshopper .ui-selectmenu-item-icon, .Grasshopper_sel { background: url(images/carpet/flor.jpg) 0  -1200px no-repeat;}
+body .Frog .ui-selectmenu-item-icon, .Frog_sel { background: url(images/carpet/flor.jpg) 0  -1300px no-repeat;}
+body .Canary .ui-selectmenu-item-icon, .Canary_sel { background: url(images/carpet/flor.jpg) 0  -1400px no-repeat;}
+body .TabbyCat .ui-selectmenu-item-icon, .TabbyCat_sel { background: url(images/carpet/flor.jpg) 0  -1500px no-repeat;}
+body .Goldfish .ui-selectmenu-item-icon, .Goldfish_sel { background: url(images/carpet/flor.jpg) 0  -1600px no-repeat;}
+body .PaintedTurtle .ui-selectmenu-item-icon, .PaintedTurtle_sel { background: url(images/carpet/flor.jpg) 0  -1700px no-repeat;}
+body .Snake .ui-selectmenu-item-icon, .Snake_sel { background: url(images/carpet/flor.jpg) 0  -1800px no-repeat;}
+body .Parrot .ui-selectmenu-item-icon, .Parrot_sel { background: url(images/carpet/flor.jpg) 0  -1900px no-repeat;}
+body .Gerbil .ui-selectmenu-item-icon, .Gerbil_sel { background: url(images/carpet/flor.jpg) 0  -2000px no-repeat;}
+body .PotbellyPig .ui-selectmenu-item-icon, .PotbellyPig_sel { background: url(images/carpet/flor.jpg) 0  -2100px no-repeat;}
+body .IrishSetter .ui-selectmenu-item-icon, .IrishSetter_sel { background: url(images/carpet/flor.jpg) 0  -2200px no-repeat;}
+body .Hamster .ui-selectmenu-item-icon, .Hamster_sel { background: url(images/carpet/flor.jpg) 0  -2300px no-repeat;}
+body .scratch .ui-selectmenu-item-icon, .scratch_sel { background: url(images/carpet/flor.jpg) -20px  -2400px no-repeat;}
+body .Fleece .ui-selectmenu-item-icon, .Fleece_sel { background: url(images/fleece/fleece.jpg) 0  -1505px no-repeat;}
+body .Snow .ui-selectmenu-item-icon, .Snow_sel { background: url(images/fleece/fleece.jpg) 0  -1400px no-repeat;}
+body .Raven .ui-selectmenu-item-icon, .Raven_sel { background: url(images/fleece/fleece.jpg) 0  -1300px no-repeat;}
+body .Charcoal .ui-selectmenu-item-icon, .Charcoal_sel { background: url(images/fleece/fleece.jpg) 0  -1200px no-repeat;}
+body .Lavender .ui-selectmenu-item-icon, .Lavender_sel { background: url(images/fleece/fleece.jpg) 0  -1100px no-repeat;}
+body .Ruby .ui-selectmenu-item-icon, .Ruby_sel { background: url(images/fleece/fleece.jpg) 0  -1000px no-repeat;}
+body .Fire .ui-selectmenu-item-icon, .Fire_sel { background: url(images/fleece/fleece.jpg) 0  -900px no-repeat;}
+body .Clay .ui-selectmenu-item-icon, .Clay_sel { background: url(images/fleece/fleece.jpg) 0  -800px no-repeat;}
+body .Chocolate .ui-selectmenu-item-icon, .Chocolate_sel { background: url(images/fleece/fleece.jpg) 0  -700px no-repeat;}
+body .Sage .ui-selectmenu-item-icon, .Sage_sel { background: url(images/fleece/fleece.jpg) 0  -600px no-repeat;}
+body .Lawn .ui-selectmenu-item-icon, .Lawn_sel { background: url(images/fleece/fleece.jpg) 0  -500px no-repeat;}
+body .Grass .ui-selectmenu-item-icon, .Grass_sel { background: url(images/fleece/fleece.jpg) 0  -400px no-repeat;}
+body .DeepOcean .ui-selectmenu-item-icon, .DeepOcean_sel { background: url(images/fleece/fleece.jpg) 0  -300px no-repeat;}
+body .Chartreuse .ui-selectmenu-item-icon, .Chartreuse_sel { background: url(images/fleece/fleece.jpg) 0  -200px no-repeat;}
+body .Buttercup .ui-selectmenu-item-icon, .Buttercup_sel { background: url(images/fleece/fleece.jpg) 0  -100px no-repeat;}
+body .Sand .ui-selectmenu-item-icon, .Sand_sel { background: url(images/fleece/fleece.jpg) 0  0px no-repeat;}
+/*
+body .Fabric .ui-selectmenu-item-icon, .Fabric_sel { background: url(images/fabrics/fabric.jpg) 0  -25px no-repeat;}
+*/
+body .fabric1 .ui-selectmenu-item-icon, .fabric1_sel { background: url(images/fabrics/fabric.jpg) 0  -25px no-repeat;}
+body .fabric2 .ui-selectmenu-item-icon, .fabric2_sel { background: url(images/fabrics/fabric.jpg) 0  -160px no-repeat;}
+body .fabric3 .ui-selectmenu-item-icon, .fabric3_sel { background: url(images/fabrics/fabric.jpg) 0  -325px no-repeat;}
+body .fabric4 .ui-selectmenu-item-icon, .fabric4_sel { background: url(images/fabrics/fabric.jpg) 0  -475px no-repeat;}
+body .fabric5 .ui-selectmenu-item-icon, .fabric5_sel { background: url(images/fabrics/fabric.jpg) 0  -625px no-repeat;}
+body .fabric6 .ui-selectmenu-item-icon, .fabric6_sel { background: url(images/fabrics/fabric.jpg) 0  -775px no-repeat;}
+body .fabric7 .ui-selectmenu-item-icon, .fabric7_sel { background: url(images/fabrics/fabric.jpg) 0  -900px no-repeat;}
+body .fabric8 .ui-selectmenu-item-icon, .fabric8_sel { background: url(images/fabrics/fabric.jpg) 0  -1075px no-repeat;}
+body .fabric9 .ui-selectmenu-item-icon, .fabric9_sel { background: url(images/fabrics/fabric.jpg) -25px  -1215px no-repeat;}
+body .fabric10 .ui-selectmenu-item-icon, .fabric10_sel { background: url(images/fabrics/fabric.jpg) 0  -1375px no-repeat;}
+body .fabric11 .ui-selectmenu-item-icon, .fabric11_sel { background: url(images/fabrics/fabric.jpg) 0  -1525px no-repeat;}
+body .fabric12 .ui-selectmenu-item-icon, .fabric12_sel { background: url(images/fabrics/fabric.jpg) 0  -1675px no-repeat;}
+body .fabric13 .ui-selectmenu-item-icon, .fabric13_sel { background: url(images/fabrics/fabric.jpg) 0  -1825px no-repeat;}
+body .SolidColor .ui-selectmenu-item-icon, .SolidColor_sel { background: url(images/fabrics/fabric.jpg) 0  -2125px no-repeat;}
+
+
+body .Charcoal_felt .ui-selectmenu-item-icon, .Charcoal_felt_sel { background: url(images/felt/felt.jpg) 0  0px no-repeat;}
+body .Flannel_felt .ui-selectmenu-item-icon, .Flannel_felt_sel { background: url(images/felt/felt.jpg) 0  -100px no-repeat;}
+body .Oatmeal_felt .ui-selectmenu-item-icon, .Oatmeal_felt_sel { background: url(images/felt/felt.jpg) 0  -200px no-repeat;}
+body .Vanilla_felt .ui-selectmenu-item-icon, .Vanilla_felt_sel { background: url(images/felt/felt.jpg) 0  -300px no-repeat;}
+body .Taupe_felt .ui-selectmenu-item-icon, .Taupe_felt_sel { background: url(images/felt/felt.jpg) 0  -400px no-repeat;}
+body .Earthen_felt .ui-selectmenu-item-icon, .Earthen_felt_sel { background: url(images/felt/felt.jpg) 0  -500px no-repeat;}
+body .Walnut_felt .ui-selectmenu-item-icon, .Walnut_felt_sel { background: url(images/felt/felt.jpg) 0  -600px no-repeat;}
+body .Brick_felt .ui-selectmenu-item-icon, .Brick_felt_sel { background: url(images/felt/felt.jpg) 0  -700px no-repeat;}
+body .Cayenne_felt .ui-selectmenu-item-icon, .Cayenne_felt_sel { background: url(images/felt/felt.jpg) 0  -800px no-repeat;}
+body .OrangeCrush_felt .ui-selectmenu-item-icon, .OrangeCrush_felt_sel { background: url(images/felt/felt.jpg) 0  -900px no-repeat;}
+body .Marigold_felt .ui-selectmenu-item-icon, .Marigold_felt_sel { background: url(images/felt/felt.jpg) 0  -1000px no-repeat;}
+body .Chartreuse_felt .ui-selectmenu-item-icon, .Chartreuse_felt_sel { background: url(images/felt/felt.jpg) 0  -1100px no-repeat;}
+body .GreenPalm_felt .ui-selectmenu-item-icon, .GreenPalm_felt_sel { background: url(images/felt/felt.jpg) 0  -1200px no-repeat;}
+body .Lagoon_felt .ui-selectmenu-item-icon, .Lagoon_felt_sel { background: url(images/felt/felt.jpg) 0  -1300px no-repeat;}
+body .DustyTurquiose_felt .ui-selectmenu-item-icon, .DustyTurquiose_felt_sel { background: url(images/felt/felt.jpg) 0  -1400px no-repeat;}
+body .casters .ui-selectmenu-item-icon { background: url(images/base/base.png) 0  -180px no-repeat;}
+body .adjustable .ui-selectmenu-item-icon { background: url(images/base/base.png) -54px  -180px no-repeat;}
+body .dot_den_frame .ui-selectmenu-item-icon { background: url(images/base/base.png) 0  -205px no-repeat;}
+.Casters_base_sel { background: url(images/base/base.png) 0  0px no-repeat;}
+.Adjustable_Feet_base_sel { background: url(images/base/base.png) 0  -60px no-repeat;}
+.Dot_Den_Frame_base_sel { background: url(images/base/base.png) 0  -120px no-repeat;}
+		
+.ModMover_sel { background: url(images/houses/modmover3.jpg) 0 0 no-repeat;}
+.DotDen_sel { background: url(images/houses/dotden2.jpg) 0 0 no-repeat;}
+.CaseStudy_sel { background: url(images/houses/casestudycondo1.jpg) 0  0 no-repeat;}
+
+/*select with custom icons*/
+body a.customicons { height: 2.8em;}
+body .customicons li a, body a.customicons span.ui-selectmenu-status { line-height: 2em; padding-left: 60px !important; }
+
+#house_dd {
+position:absolute;
+right:0px;
+
+padding:4px;
+top:0px;
+color:#111111;
+}
+#house_dd label {font-weight:normal; padding-left:5px; padding-bottom:3px; width:125px; text-align:right;}
+
+#house_dd a:hover {text-decoration:none;}
+
+#house_dd .ui-selectmenu {height: 1em; line-height .ui:1em; padding-left:2px; padding-top:2px; padding-bottom:2px; margin-top:4px;}
+#house-menu li a, #house_dd .ui-selectmenu-status   {
+line-height:1em; padding:.3em .3em; 
+}
+#house-menu {margin-top:5px}
+
+
+
+#house_dd .ui-state-default, #house_dd .ui-widget-content #house_dd .ui-state-default, #house_dd .ui-widget-header #house_dd .ui-state-default { background-color: #363636; background: #363636;  font-weight: bold;}
+#house_dd .ui-state-default a, #house_dd .ui-state-default a:link, #house_dd .ui-state-default a:visited { color: #ffffff; text-decoration: none; }
+#house_dd .ui-state-hover, #house_dd .ui-widget-content .ui-state-hover, #house_dd .ui-widget-header .ui-state-hover, #house_dd .ui-state-focus, #house_dd .ui-widget-content .ui-state-focus, #house_dd .ui-widget-header .ui-state-focus { border:1px solid #363636; background:#363636; font-weight: bold; color: #cccccc; }
+#house_dd .ui-state-hover a, #house_dd .ui-state-hover a:hover { color: #cccccc; text-decoration: none; }
+#house_dd .ui-state-active, #house_dd .ui-widget-content .ui-state-active, #house_dd .ui-widget-header #house_dd .ui-state-active { border:1px solid #363636; background-color: #363636; background:#363636; font-weight: bold; color: #cccccc; }
+#house_dd .ui-state-active a, #house_dd .ui-state-active a:link, #house_dd .ui-state-active a:visited { color: #212121; text-decoration: none; }
+#house_dd .ui-widget :active { outline: none; }	
+
+#house_dd .ui-state-highlight, #house_dd .ui-widget-content #house_dd .ui-state-highlight, #house_dd .ui-widget-header #house_dd .ui-state-highlight  {border: 1px solid #262626; background:none; color: #cccccc; tex-decoration:none;}
+#house_dd .ui-state-highlight a, #house_dd .ui-widget-content #house_dd .ui-state-highlight a,#house_dd .ui-widget-header #house_dd .ui-state-highlight a { color: #cccccc; text-decoration:none;}
+
+#house_dd .ui-state-hover #house_dd .ui-icon, #house_dd .ui-state-focus #house_dd .ui-icon {background-color:#cccccc; background-image: none; }
+#house_dd .ui-state-active #house_dd .ui-icon {background-image: none; }
+#house_dd .ui-state-highlight #house_dd .ui-icon {background-image: none; }

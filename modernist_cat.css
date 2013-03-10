@@ -1,0 +1,628 @@
+@charset "UTF-8";
+/* ----CSS RESET FROM ERIC MEYER v1.0 | 20080212 ---------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*------------------------ END CSS RESET ----------------------*/
+
+body {
+text-align:center;
+font-family: helvetica, arial, sans serif;
+font-size:12px;
+background:#5f5e5e url(images/body_bg.png);
+background-position:top;
+background-repeat:repeat-x;
+}
+
+a {
+text-decoration:none;
+color:#778a2b;
+}
+a:hover {
+text-decoration:underline;
+color:#bbd147;
+}
+a:visited {
+color:#778a2b;
+}
+
+.ui-icon-green { background-image: url(images/ui-icons_778a2b_256x240.png); }
+
+.rnd_border {
+border:1px solid #111111;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+	
+}
+
+.small_box {
+width: 328px;
+min-height: 150px;
+display:inline-block;
+}
+
+.large_box {
+width: 680px;
+padding-top:0px;
+text-align:left;
+margin-right:auto;
+margin-left:auto;
+margin-top:15px;
+} 
+.header {
+height:45px;
+border-bottom:1px solid #111111;
+}
+
+.header img {
+padding-left:15px;
+}
+
+.main {
+background-color:#FFFFFF;
+text-align: left;
+margin-left:auto;
+margin-right:auto;
+width:760px;
+padding-top:15px;
+padding-left:0px;
+height:100%
+}
+
+.tagline {
+margin-top:2px;
+border-top:2px solid #111111;
+padding-left:15px;
+}
+
+.green {
+background-color:#b3d335;
+}
+.grey {
+background:url(images/sm_box_bg.png);
+	background-color:#656565;
+	
+	background-position:bottom;
+	background-repeat:repeat-x;
+}
+
+.description {
+position:absolute;
+margin: 11px 10px 10px 378px;
+background-color:#FFFFFF;
+font-size:12px;
+width:300px;
+border:1px solid #111111;
+padding:0px 10px 10px 10px;
+}
+
+.description ul {
+ list-style:disc;
+ margin-top:0px;
+ margin-bottom:10px;
+ margin-left:15px;
+}
+
+.description p {
+margin-top:10px;
+}
+
+.product {
+background-color:#778a2b;
+
+text-align:center;
+color:#ffffff;
+font-size:22px;
+font-weight:normal;
+padding:7px 10px 1px 10px;
+min-width:200px;
+display:table;
+margin-top:-48px;
+margin-left:80px;
+}
+
+.button {
+background-color:#778a2b;
+
+text-align:center;
+color:#ffffff;
+font-size:18px;
+font-weight:normal;
+padding:7px 10px 1px 10px;
+
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.purchase {
+width:200px;
+}
+
+.buy {
+margin-top:20px;
+width:60px;
+}
+/* ----- Configure ----*/
+
+
+#form {
+ 
+ width:270px;
+ float:left;
+ padding:10px;
+}
+
+
+#viewer {
+float:left;
+	width:450px;
+	border:1px solid grey;
+	background-color:#FFFFFF;
+	height:325px;
+	vertical-align:bottom;
+}
+
+#selections {
+float:left;
+position:relative;
+bottom:-120px;
+left:25px;
+height:250px;
+}
+.selected {
+height:40px; 
+width:150px; 
+border:1px solid grey;
+text-align:right;
+vertical-align:bottom;
+padding:4px;}
+
+
+#item_selected img {
+float:left;
+width:250px;
+position:relative;
+bottom:-40px;
+left:30px;
+}
+/*/-------------Scrollable ------------------*/
+
+/* these make the scroll-y go */
+
+.scrollable_cont {
+/* outside container for the content */
+	/* required settings */
+	
+	width: 680px;
+	height:375px;
+
+	/* custom decorations */
+	
+	
+	padding-top:20px;
+	text-align:left;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:15px;
+	
+}
+/*
+.products_cont {
+
+	 required settings 
+	
+	width: 680px;
+	height:375px;*/
+
+	/* custom decorations 
+	
+	
+	padding-top:0px;
+	text-align:left;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:15px;
+	
+}*/
+
+
+/*
+	root element for the scrollable.
+	when scrolling occurs this element stays still.
+*/
+
+/* single scrollable item 
+	.item {
+		float:left;
+		cursor:pointer;
+		width:500px;
+		height:450px;
+		padding:10px;
+	}
+	
+*/
+.scrollable {
+
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 680px;
+	height:350px;
+
+	/* custom decorations */
+	border-top:1px solid #111111;
+	border-bottom:1px solid #111111;
+	margin-top:0px;
+		
+	
+}
+
+/*
+	root element for scrollable items. Must be absolutely positioned
+	and it should have a extremely large width to accomodate scrollable items.
+	it's enough that you set the width and height for the root element and
+	not for this element.
+*/
+.scrollable .items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+
+
+.single {
+/*  when working with a single image */
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 360px;
+	height:360px;
+
+	/* custom decorations */
+	border-top:none;
+	border-bottom:none;
+	margin-top:0px;
+}
+
+
+.items div {
+	float:left;
+	width:680px;
+}
+
+/* single scrollable item */
+.double img {
+	float:left;
+	margin:20px 5px 0px 21px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:300px;
+	height:300px;
+	
+}
+
+/* single scrollable item */
+.single img {
+	float:left;
+	margin:0px 5px 0px 0px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:350px;
+	height:350px;
+	
+}
+
+/* active item */
+.scrollable .active {
+	border:2px solid #000;
+	position:relative;
+	cursor:default;
+}
+
+/* this makes it possible to add next button beside scrollable */
+.scrollable {
+	float:left;	
+}
+
+/* prev, next, prevPage and nextPage buttons */
+a.browse {
+	background:url(images/layout/scroll_btn.png) no-repeat;
+	
+	position:relative;
+	width:43px;
+	height:43px;
+	float:left;
+	top:180px;
+	z-index:2;
+	cursor:pointer;
+	font-size:1pt;
+}
+
+/* right */
+a.right 				{ 
+float:right;
+background-position: 0 0px; 
+clear:right; 
+margin-right: 15px;
+}
+a.right:hover 		{ background-position:-42px 0; }
+a.right:active 	{ background-position:-84px 0; } 
+
+
+/* left */
+a.left				{ 
+float:left;
+background-position: 0 -42px; 
+clear:left; 
+margin-left: 15px;
+ } 
+a.left:hover  		{ background-position:-42px -42px; }
+a.left:active  	{ background-position:-84px -42px; }
+
+/* up and down */
+a.up, a.down		{ 
+	background:url(images/carpet/_MG_3453.jpg) no-repeat; 
+	float: none;
+	margin: 10px 50px;
+}
+
+/* up */
+a.up:hover  		{ background-position:-30px 0; }
+a.up:active  		{ background-position:-60px 0; }
+
+/* down */
+a.down 				{ background-position: 0 -30px; }
+a.down:hover  		{ background-position:-30px -30px; }
+a.down:active  	{ background-position:-60px -30px; } 
+
+
+/* disabled navigational button */
+a.disabled {
+	visibility:hidden !important;		
+} 	
+
+
+
+/*********** navigator ***********/
+
+
+/* position and dimensions of the navigator */
+.navi {
+	margin-left:auto;
+	margin-right:auto;
+	width:350px;
+	height:20px;
+}
+
+
+/* items inside navigator */
+.navi a {
+	width:8px;
+	height:8px;
+	float:left;
+	margin:3px;
+	background:url(images/layout/navigator.png) 0 0 no-repeat;
+	display:block;
+	font-size:1px;
+}
+
+/* mouseover state */
+.navi a:hover {
+	background-position:0 -8px;      
+}
+
+/* active state (current page state) */
+.navi a.active {
+	background-position:0 -16px;     
+} 	
+
+
+	
+	#main_navi li {
+		
+		border-top:1px solid #666;
+		
+		color:#FFFFFF;
+		font-size:12px;
+		height:150px;
+		list-style-type:none;
+		padding:10px;
+		width:190px;
+		cursor:pointer;
+	}
+	
+	#main_navi li:hover {
+		
+	}
+	
+	#main_navi li.active {
+		
+	}
+	
+	#main_navi img {
+		float:left;
+		margin-right:10px;
+	}
+	
+	#main_navi strong {
+		display:block;
+	}
+	
+	#main div.navi {
+		margin-left:250px;
+		cursor:pointer;
+	}
+ 
+	#main {
+		position:relative;
+		height: 1000px;
+		
+	}
+	/* root element for pages */
+	#pages {
+		position:absolute;
+		height:20000em;
+	}
+	
+	
+	
+	/* single page */
+	.page {
+		padding:0 10px 10px 10px;
+		height: 350px;
+		width:760px;
+	}
+	
+
+	/* navigation */
+	#nav {
+		background:#ddd url(/img/global/gradient/h300_reverse.png);
+		border-bottom:1px solid #CCCCCC;
+		height:156px;	
+		width:800px;
+	}
+	
+	#nav ul {	
+		width:800px;
+		margin:0 auto;	
+	}
+	
+	#nav li {	
+		border-right:1px solid #ddd;
+		float:left;
+		padding-left:1px;
+		width:175px;
+		list-style-type:none;
+		text-align:center;
+		margin-top:0px;
+	}
+	
+	#nav a {
+		color:#333333;
+		display:block;
+		padding:17px;
+		position:relative;
+		word-spacing:-2px;
+		font-size:11px;		
+		height:122px;
+		text-decoration:none;
+	}	
+	
+	#nav a.current {
+		background:url(/tools/img/tabs/down_large.jpg);	
+	}
+	
+	#nav img {
+		background-color:#fff;
+		border:1px solid #ccc;
+		margin:3px 0 5px 27px;
+		padding:4px;		
+		display:block;
+	}
+	
+	#nav strong {
+		display:block;		
+		font-size:13px;
+	}
+	
+	/* panes */
+	#panes {
+		
+		
+		width:743px;	
+		height:375px;
+		margin-bottom:10px;
+		padding-bottom:20px;
+		
+		/* must be relative so the individual panes can be absolutely positioned */
+		position:relative;
+	}
+	
+	/* crossfading effect needs absolute positioning from the elements */
+	#panes div.window {
+		display:none;		
+		position:absolute;
+		top:20px;
+		left:20px;
+		font-size:13px;
+		color:#444;	
+		width:650px; 
+	}
+	
+	#panes img {
+		float:left;
+		margin-right:20px;		
+	}
+	
+	#panes p.more {
+		color:#000;
+		font-weight:bold;
+		font-size:13px;
+	}
+	
+	#panes h3 {
+		margin:0 0 -5px 0;
+		font-size:22px;
+		font-weight:normal;
+	}
+	
+	.overlay {
+		display:none;
+		width:500px;
+		padding:20px;
+		background-color:#ddd;
+	}
+	
+	
