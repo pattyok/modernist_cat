@@ -7,7 +7,8 @@ position:relative;
 letter-spacing: 0px;
 color:#DCCF3D;
 z-index:200;
-margin-bottom:12px; margin-top:-10px;
+margin-bottom:12px; 
+
 font-size:22px;
 }
 
@@ -24,7 +25,7 @@ height:150%;
 display:none;
 }*/
 
-.main, #edgy_img, #modmover_img, #atomic_img, #casestudy_img, #hideaway_img, #dotden_img, #lunar_img, #litter-option, #fabric-option, #fabric-option2, #litter_price, #hideawaydel_img, .carpet_disp, .fleece_disp, .finish_disp, .width_disp, .entwidth_disp, .felt_disp, .entloc_disp, .smhole_disp, #carpet_add, #station_img, #benchcushion, .fabric_disp, .base_disp, .base_disp, .base_disp2, .length_disp, .cloth_disp, .legs_disp, #shipping_notes, .laminate_disp, .entrance_disp, .litterpan_disp, .littermat_disp {
+.main, #edgy_img, #modmover_img, #atomic_img, #casestudy_img, #hideaway_img, #dotden_img, #lunar_img, #litter-option, #fabric-option, #fabric-option2, #litter_price, #hideawaydel_img, .carpet_disp, .fleece_disp, .finish_disp, .width_disp, .entwidth_disp, .felt_disp, .entloc_disp, .smhole_disp, .carpet_disp2 #carpet_add, #station_img, #benchcushion, .fabric_disp, .base_disp, .base_disp, .base_disp2, .length_disp, .cloth_disp, .legs_disp, #shipping_notes, .laminate_disp, .entrance_disp, .litterpan_disp, .littermat_disp {
 
 display:none;
 }
@@ -133,6 +134,10 @@ color:#A49B93;
     background-image: url("images/ui-icons_A49B93_256x240.png");
     height: 16px;
     width: 16px;
+}
+
+#panes {
+ padding:10px;	
 }
 
 #form {
