@@ -29,6 +29,13 @@
 
 		</li>
         <li>
+			<a href="../products/console.html" id="console">
+				<img src="../images/products/console1.jpg" alt="Circa50: Console" /></a>
+				<a class="title" href="../products/console.html">Circa50: Console</a> | $399
+				
+
+		</li>
+        <li>
 			<a href="../products/circa50_diner.html" id="diner">
 				<img src="../images/products/feeder1.jpg" alt="Circa50: Diner" /></a>
 				<a class="title" href="../products/circa50_diner.html">Circa50: Diner</a> | $79

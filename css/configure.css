@@ -142,7 +142,7 @@ color:#A49B93;
 
 #form {
  
- width:250px;
+ width:310px;
  float:left;
  padding-left:10px;
  padding-right:10px;
@@ -153,7 +153,7 @@ color:#A49B93;
 
 #viewer {
 float:left;
-	width:660px;
+	width:600px;
 	border:1px solid #a49b93;
 	background-color:#eeeceb;
 	height:435px;
@@ -195,33 +195,21 @@ font-weight:bold;
 margin-top:10px;
 }
 
-.buy {
-text-align:center;
-font: 21px 'EurostileRomanDTCRegular', Verdana, sans-serif;letter-spacing: 0;
-padding:0px 15px;
+#buy_btn {
+
 margin-top:10px;
--moz-border-radius:20px;
--webkit-border-radius:20px;
 white-space:nowrap;
 margin-left:auto;
 margin-right:auto;
-background-color:#DCCF3D;
-border-style:solid;
+
 /*background-color: #a4ca27; */
-color: #493e31;
-cursor:pointer;
 position:absolute;
 right:20px;
 top:271px;
 
 }
 
-.buy:hover{
-background:#bdc31d url('images/btn_bg_hover.png') repeat-x top left;
-color:#362f2d;
-text-decoration:none;
-/*border: 1px outset #a4ca27;*/
-}
+
 
 
 

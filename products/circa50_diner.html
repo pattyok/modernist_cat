@@ -73,11 +73,16 @@ pageTracker._trackPageview();
 <div id="main">
 <div class="header">
     <a href="/index.html"><img class="logo" src="../css/images/logo.png" alt="modernist cat - made for pets designed for you" /></a>
-   
-  
-  	<div class="contact">
-  	<a href="../contact.html">about us</a> | <a href="../faq.html">FAQ's</a>
-    </div>
+   <div class="headerlinks">
+   <div class="contact">
+  	<a href="../products.html">shop</a> |<a href="../contact.html">about us</a> | <a href="../faq.html">FAQ's</a>
+     </div>
+    <div class="social"><a href="http://www.facebook.com/pages/Seattle-WA/Modernist-Cat/115777068471250" title="Like us on Facebook" class="facebook">Facebook</a>
+   <a href="https://twitter.com/ModernistCat" class="twitter" data-show-count="false" title="Follow us on Twitter">Twitter</a>
+   <a data-pin-do="buttonFollow" class="pinterest" href="http://pinterest.com/modernistcat/" title="Follow us on Pinterest">Pinterest</a>
+   </div>
+ </div>
+  	
   
  </div>
 
@@ -98,7 +103,7 @@ pageTracker._trackPageview();
 </p>
                                 <p><strong>Specifications:</strong>
                                 <ul><li>
-                                6&#189;"W x 15"L x 4.5&#189;"H</li><li>
+                                6&#189;"W x 15"L x 4&#189;"H</li><li>
 								2 pint size bowls</li>
                                 </ul>
 
@@ -115,7 +120,7 @@ pageTracker._trackPageview();
                                 <p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
                                 <p><strong>$79</strong></p>
                        
-                          <p class="small">Item ships fully assembled. All items are made to order, please allow 3-4 weeks for delivery.</p>      
+                          <p class="small">Item ships fully assembled. All items are made to order, please allow 1-2 weeks for delivery.</p>      
                             <br clear="all" />
                  </div>
                <!-- end description -->
@@ -133,17 +138,15 @@ pageTracker._trackPageview();
                                     <div class="item">
                                     <img src="../images/products/feeder3.jpg" alt="Litter Hideaway Circa50">                        			</div>
                               </div> <!-- end items -->
-                              <div class="single_nav">
+                              
+                            </div> <!-- end scrollable -->
+                            <div class="single_nav">
                               	<div class="single_nav_inner">	
                               		<a class="prev browse left"></a><div class="navi"></div> 	<a class="next browse right"></a> 
                                  </div> 
                               </div> 
-                            </div> <!-- end scrollable -->
-                            
                
-             <div class="outer_button">
-               <span class="button">
-<a href="../configure.html?item=circa50Diner">Design your feeder &raquo;</a></span>               </div>
+             <a class="button" id="configure_btn" href="../configure.html?item=circa50Diner">Design your Circa50 &raquo;</a>
       </div><!-- end window -->
               
              
@@ -189,6 +192,13 @@ $(document).ready(function(){
 
 		</li>
         <li>
+			<a href="console.html" id="console">
+				<img src="../images/products/console1.jpg" alt="Circa50: Console" /></a>
+				<a class="title" href="console.html">Circa50: Console</a> | $399
+				
+
+		</li>
+        <li>
 			<a href="circa50_diner.html" id="diner">
 				<img src="../images/products/feeder1.jpg" alt="Circa50: Diner" /></a>
 				<a class="title" href="circa50_diner.html">Circa50: Diner</a> | $79
@@ -207,7 +217,7 @@ $(document).ready(function() {
 
 
 // horizontal scrollables. each one is circular and has its own navigator instance
-var horizontal = $(".scrollable").scrollable({size: 1}).circular().navigator(".navi");
+var horizontal = $(".scrollable").scrollable({size: 1}).navigator(".navi");
 
 
 // when page loads setup keyboard focus on the first horzontal scrollable

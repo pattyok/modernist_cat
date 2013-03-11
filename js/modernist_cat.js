@@ -16,10 +16,10 @@ var makePopup = function(imgID){
 }
 
 
-// execute your scripts when the DOM is ready. this is mostly a good habit
+
 $(document).ready(function() {
-	console.log("installed");
 	
+	/*
 	$(".imgOverlay").click(function(){
 		var imgID = $(this).attr('id');
 		makePopup(imgID);
@@ -31,6 +31,6 @@ $(document).ready(function() {
 		$(this).parent('.overlayContainer').remove();
 		
 	});
-	
+	*/
 	
 });

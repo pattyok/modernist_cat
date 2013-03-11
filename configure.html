@@ -49,14 +49,25 @@ top: -45px;
 
 </script>
 </head>
-<body id="configure">
-<!-- #BeginLibraryItem "/Library/Header.lbi" -->
+<body id="configure"><!-- #BeginLibraryItem "/Library/Header.lbi" -->
 <div id="main">
-	<div class="header"> <a href="/index.html"><img class="logo" src="css/images/logo.png" alt="modernist cat - made for pets designed for you" /></a>
-	  <div class="contact"> <a href="contact.html">about us</a> | <a href="faq.html">FAQ's</a> </div>
-	</div>
-<!-- #EndLibraryItem -->
-<div class="main_inner">
+<div class="header">
+    <a href="/index.html"><img class="logo" src="css/images/logo.png" alt="modernist cat - made for pets designed for you" /></a>
+   <div class="headerlinks">
+   <div class="contact">
+  	<a href="products.html">shop</a> |<a href="contact.html">about us</a> | <a href="faq.html">FAQ's</a>
+     </div>
+    <div class="social"><a href="http://www.facebook.com/pages/Seattle-WA/Modernist-Cat/115777068471250" title="Like us on Facebook" class="facebook">Facebook</a>
+   <a href="https://twitter.com/ModernistCat" class="twitter" data-show-count="false" title="Follow us on Twitter">Twitter</a>
+   <a data-pin-do="buttonFollow" class="pinterest" href="http://pinterest.com/modernistcat/" title="Follow us on Pinterest">Pinterest</a>
+   </div>
+ </div>
+  	
+  
+ </div>
+
+  
+<!-- #EndLibraryItem --><div class="main_inner">
 <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
   <div class="breadcrumb"><a href="index.html">Home</a> &gt; <a href="products.html">Shop</a> &gt; Customize</div>
   <div id="panes" class="scrollable_cont grey">
@@ -72,9 +83,8 @@ top: -45px;
       </div>
       <div class="cloth_disp">
         <fieldset id="cloth-field">
-          <label for="cloth">Grass Cloth<a href="#" id="opener_cloth" class="open">view larger<span class="ui-icon ui-icon-newwin"></span></a></label>
+          <label for="cloth">Door Finish:<a href="#" id="opener_cloth" class="open">view larger<span class="ui-icon ui-icon-newwin"></span></a></label>
           <br style="clear:both"/>
-          <div id="cloth-option" class="label_note">Optional</div>
           <select name="os2" id="cloth" class="customicons">
           </select>
         </fieldset>
@@ -116,14 +126,7 @@ top: -45px;
           </select>
         </fieldset>
       </div>
-      <div class="carpet2_disp">
-        <fieldset id="carpet2-field">
-          <label for="carpet2">Scratch Pad Surface:<a href="#" id="opener_carpet2" class="open">view larger<span class="ui-icon ui-icon-newwin"></span></a></label>
-          <br style="clear:both"/>
-          <select name="os7" id="carpet2" class="customicons">
-          </select>
-        </fieldset>
-      </div>
+      
       <div class="litterpan_disp">
         <fieldset id="litterpan-field">
           <label for="litterpan">
@@ -153,7 +156,7 @@ top: -45px;
           <div id="sel_finish" class=" selected"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">Finish</span></div>
         </div>
         <div class="cloth_disp">
-          <div id="sel_cloth" class=" selected" style="height:100px;"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">Grass Cloth</span></div>
+          <div id="sel_cloth" class=" selected" style="height:100px;"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">Door Finish</span></div>
         </div>
         <div class="laminate_disp">
           <div id="sel_laminate" class=" selected"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">Laminate</span></div>
@@ -167,9 +170,7 @@ top: -45px;
         <div class="carpet_disp">
           <div id="sel_carpet" class=" selected"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">Scratch Pad</div>
         </div>
-        <div class="carpet2_disp">
-          <div id="sel_carpet2" class=" selected"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">Scratch Pad</div>
-        </div>
+        
       </div>
       <div class="viewer_rt item_sel">
         <div><img  id="circa50_img" src="images/products/small1.jpg" /></div>
@@ -188,16 +189,12 @@ top: -45px;
           <dd class="seltxt_laminate">none</dd>
         </dl>
         <dl class="cloth_disp">
-          <dt>Grass Cloth:&nbsp;</dt>
+          <dt>Door Finish:&nbsp;</dt>
           <dd class="seltxt_cloth">none</dd>
         </dl>
         <dl class="carpet_disp">
           <dt>Scratch Pad:&nbsp;</dt>
           <dd class="seltxt_carpet">none </dd>
-        </dl>
-        <dl class="carpet2_disp">
-          <dt>Additional Carpet Tile:&nbsp;</dt>
-          <dd class="seltxt_carpet2">none </dd>
         </dl>
         <dl class="fleece_disp">
           <dt>Fleece:&nbsp;</dt>
@@ -215,8 +212,8 @@ top: -45px;
           <dt>Littermat:&nbsp;</dt>
           <dd class="seltxt_litterpan">none</dd>
         </dl>
-        <div class="price">Price: $<!--, shipping $<span id="shipping"></span> --></div>
-        <span class="small text"> Item ships fully assembled. All items are made to order, please allow 3-4 weeks for delivery.</span>
+        <div class="price">Price: $<span id="price"></span><!--, shipping $<span id="shipping"></span> --></div>
+        <span class="small text"> Item ships fully assembled. All items are made to order, please allow 2-3 weeks for delivery.</span>
         <input type="hidden" name="cmd" value="_cart" />
         <input type="hidden" name="add" value="1" />
         <input type="hidden" name="business" value="Modernistcat@gmail.com" />
@@ -225,7 +222,7 @@ top: -45px;
         <div id="buy_button2">nothing</div>
         <!-- variables get updated in displayVals() -->
         
-        <input type="submit" class="buy" border="0" name="submit" alt="Purchase with Paypal" value="Add to Cart »" />
+        <input type="submit" class="button" id="buy_btn" border="0" name="submit" alt="Purchase with Paypal" value="Add to Cart »" />
      
     
     
@@ -244,7 +241,7 @@ top: -45px;
     <div id="dialog_Laminate" title="Laminate Options"></div>            
     <div id="dialog_fleece" title="Fleece Options"></div>
     <div id="dialog_fabric" title="Fabric Options"></div>
-    <div id="dialog_cloth" title="Grass Cloth Options"></div>
+    <div id="dialog_cloth" title="Door Finish Options"></div>
     <div id="dialog_felt" title="Felt Options"></div>
     <div id="dialog_carpet" title="Scratch Pad Options"></div>
     <div id="dialog_carpet2" title="Scratch Pad Options"></div>  

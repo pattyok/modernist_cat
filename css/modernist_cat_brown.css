@@ -84,6 +84,7 @@ text-decoration:none;
 color:#7d6f15;
 font-weight:normal;
 }
+a.orange {color:#df471e};
 
 a:visited {
 color:#7d6f15;
@@ -126,7 +127,7 @@ position:relative;
 
 }
 
-.logo {width:400px}
+.logo {width:400px; float:left}
 
 .tagline img{display:none;}
 
@@ -134,6 +135,27 @@ position:relative;
 border-bottom:2px solid #493E31;
 height:54px;
 }*/
+
+.headerlinks {float:right;margin-top:60px;}
+.contact {
+float:left;
+margin-right:12px;
+margin-top:3px;
+}
+.social{float:left;}
+.social a {
+	background:url('images/layout/socialicons.png') no-repeat 0 0;
+	text-indent:-20000px;
+	height:22px;
+	width:22px;
+	display:block;
+	margin-left:3px;
+	float:left;
+ }
+ .social .twitter {background-position:0 0;}
+.social .facebook {background-position:0 -30px;}
+
+.social .pinterest {background-position:0 -60px;}
 
 /* --- Various Text Styles --- */
 #footer {
@@ -310,15 +332,7 @@ padding-left:5px;
 
 .shop {background-position: 0 -63px;}
 
-.contact {
-background-position: 0 -87px;
-position:absolute;
-right:0px;
-width:205px;
-bottom:0;
-padding-bottom:1px;
 
-text-align:right;}
 
 
 .inlineimage {
@@ -350,6 +364,17 @@ padding-bottom:15px;
 		
 		
 	}
+	.new_product {
+		background-image:url(images/layout/new.png);
+		background-repeat:no-repeat;
+		position:absolute;
+		top:6px;
+		right:20px;
+		height:85px;
+		width:100px;
+		z-index:200;
+	}
+		
 	
 	#shop a {
 		
@@ -534,7 +559,7 @@ float:left;
 margin: -7px 10px 10px 348px;*/
 background-color:#ebe8e6;
 
-width:385px;
+width:375px;
 
 line-height:1.2;
 padding:3px 15px;
@@ -567,39 +592,38 @@ font-size:10px;
 
 
 .button {
-position:relative;
+
 
 }
 
 
-.button a{
+.button, a.button{
 
 text-align:center;
 font: 20px 'EurostileRomanDTCRegular', Verdana, sans-serif;letter-spacing: 0;
-padding:3px 10px;
-margin-top:68px;
--moz-border-radius:20px;
--webkit-border-radius:20px;
-border-radius:20px;
 white-space:nowrap;
-margin-left:auto;
-margin-right:auto;
 background-color:#dccf3d;
-color: #311D0B;
+color: #493e31;
 cursor:pointer;
 float:right;
-
-
- 
+border-style:solid;
+ padding:3px 10px;
 }
 
 
-.button a:hover{
+.button:hover{
 text-decoration:none;
-background:#dccf3d url('images/btn_bg_hover.png') repeat-x top left;
+background-color:#df471e;
+color:#bdc21d;
 }
 
+#configure_btn {
+position:relative;
 
+margin-top:30px;
+margin-left:auto;
+margin-right:auto;
+}
 
 /* tooltip styling. by default the element to be styled is .tooltip  */
 .tooltip {
@@ -626,11 +650,11 @@ top:0;
 /** MODIFICATIONS FOR PROUCTS PAGE **/
 /* prev, next, prevPage and nextPage buttons */
 .single_nav {
-position:absolute;
-bottom:0px;
-width:525px;
+margin-top:5px;
 text-align:center;
-padding:3px;
+padding:5px;
+float:left;
+width:510px;
 }
 
 .single_nav_inner{
@@ -741,7 +765,7 @@ margin-left: 0px;
 	border-top:none;
 	border-bottom:none;
 	margin-top:0px;
-	margin-left:10px;
+	margin-left:20px;
 }
 
 
@@ -868,7 +892,7 @@ a.disabled {
 	width:10px;
 	height:10px;
 	float:left;
-	margin:3px;
+	margin:5px 3px;
 	background: transparent url(images/layout/navigator.png) 0 0 no-repeat;
 	display:block;
 	font-size:1px;

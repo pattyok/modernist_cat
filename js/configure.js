@@ -137,12 +137,9 @@ function displayFabric() {
 
 /*------------------------ Grasscloth Swatches -------------------------*/
 var cloth = [0, //ignore CSS naming start with 1
-			   {name: 'Spring Flax', sprite: -25}, // id: 1
-			   {name: 'Nectarine', sprite: -160},
-			   {name: 'Eggplant', sprite: -325},
-			   {name: 'Midnight', sprite: -475},
-			   {name: 'Bali Blue', sprite: -625}, // id: 5
-			   {name: 'Summer Grass', sprite: -775}, 
+			   {name: 'Walnut', sprite: -25}, // id: 1
+			   {name: 'White', sprite: -160},
+			   
 			   	 
 
 ];
@@ -173,15 +170,15 @@ function showclothIcons() {
 			for (var i=1; i < cloth.length; i++) {
 				
 				
-	      		$('body .cloth' + i + ' .ui-selectmenu-item-icon').css('background', 'url(css/images/fabrics/grasscloth.jpg) 0  ' + cloth[i].sprite + 'px no-repeat');                                       
+	      		$('body .cloth' + i + ' .ui-selectmenu-item-icon').css('background', 'url(css/images/fabrics/door.png) 0  ' + cloth[i].sprite + 'px no-repeat');                                       
 		
 	    	}
 			}
 /* Setup Cloth swatches on the dropdown */
 function setupCloth() {
-var clothOptions = '<option id="clothNone" value="None" class="">Grass Cloth Options</option>';
+var clothOptions = '<option id="clothNone" value="None" class="">Door Finish Options</option>';
 for (var i=1; i < cloth.length; i++) {
-	   			
+	   			console.log("cloth", cloth[i].name);
 				clothOptions += '<option id="cloth' + i + '" value="' + cloth[i].name + '" class="cloth' + i + '">' + cloth[i].name + '</option>';
 				
 			}
@@ -201,10 +198,10 @@ for (var i=1; i < cloth.length; i++) {
 			showclothIcons();
 			
 			/* Setup Cloth Samples */
-			var clothSamples = '<p>Choose a Grasscloth for the face of the Circa50.</p><ul class="col">'  
+			var clothSamples = '<p>Choose a door finish.</p><ul class="col">'  
 			for (var i=1; i< cloth.length; i++) {
 			
-			clothSamples +='<li class="option large"><a href="#" class="Sample_link" style="border: 1px solid gray; background: url(css/images/fabrics/grasscloth.jpg) 0  '  + cloth[i].sprite + 'px no-repeat"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">' + cloth[i].name + '</span></a><input type="hidden" name="'  + cloth[i].name + '" value="' + cloth[i].name + '" /></li>'
+			clothSamples +='<li class="option large"><a href="#" class="Sample_link" style="border: 1px solid gray; background: url(css/images/fabrics/door.png) 0  '  + cloth[i].sprite + 'px no-repeat"><span class="optionText optionTextbg">&nbsp;</span><span class="optionText">' + cloth[i].name + '</span></a><input type="hidden" name="'  + cloth[i].name + '" value="' + cloth[i].name + '" /></li>'
 			
 			}
 			clothSamples += '</ul>'
@@ -225,7 +222,7 @@ function displayCloth() {
 						clothPrice = clothCharge;
 						$('.seltxt_cloth').append(' (+$' + clothPrice + ')');
 					}
-		        $('#sel_cloth').css('background', 'url(css/images/fabrics/grasscloth.jpg) 0  ' + cloth[clothId].sprite + 'px no-repeat');
+		        $('#sel_cloth').css('background', 'url(css/images/fabrics/door.png) 0  ' + cloth[clothId].sprite + 'px no-repeat');
 			} else {
 			clothName = "None";	
 			}
@@ -698,7 +695,7 @@ function displayPreview() {
           /*-----------------------------------------------------------------*/	
           /*-------------------- SET UP THE ITEMS ---------------------------*/
           /*-----------------------------------------------------------------*/
-var cloth = 0;
+var clothCharge = 0;
 var carpetCharge = 0;
 
 var laminateCharge = 0;
@@ -728,7 +725,7 @@ var litterpanCharge = 0;
 		var itemPrice = startPrice;
 		var imagePath = 'css/images/preview/std';	
 		$('#buy_button').html("");
-		$('#buy_button').html("<input type='hidden' name='on0' value='Entrance' /><input type='hidden' name='on2' value='Grass Cloth' /><input type='hidden' name='on5' value='Lounge Pad' /><input type='hidden' name='on3' value='Fleece Pad' />");
+		$('#buy_button').html("<input type='hidden' name='on0' value='Entrance' /><input type='hidden' name='on2' value='Door Finish' /><input type='hidden' name='on5' value='Lounge Pad' /><input type='hidden' name='on3' value='Fleece Pad' />");
 		
 		
 	}  else if (itemValue == "circa50CompactI") {
@@ -740,9 +737,9 @@ var litterpanCharge = 0;
 		$('.litterpan_disp').show();
 		$('#fabric-option').show();
 		$('#loungepad').show();
-		var litterpanCharge = 19;
+		var litterpanCharge = 15;
 		var litterpanType = 'Include Litterpan';
-		var startPrice = 479;
+		var startPrice = 449;
 		var fabricCharge = 39;
 		var fleeceCharge = 39;
 		var clothCharge = 0;
@@ -750,7 +747,7 @@ var litterpanCharge = 0;
 		var itemPrice = startPrice;
 		var imagePath = 'css/images/preview/compact';	
 		$('#buy_button').html("");
-		$('#buy_button').html("<input type='hidden' name='on0' value='Entrance' /><input type='hidden' name='on2' value='Grass Cloth' /><input type='hidden' name='on5' value='Lounge Pad' /><input type='hidden' name='on3' value='Fleece Pad' />");
+		$('#buy_button').html("<input type='hidden' name='on0' value='Entrance' /><input type='hidden' name='on2' value='Door Finish' /><input type='hidden' name='on5' value='Lounge Pad' /><input type='hidden' name='on3' value='Fleece Pad' />");
 		
 		
 	}  else if (itemValue == "circa50CompactII") {
@@ -762,9 +759,9 @@ var litterpanCharge = 0;
 		$('.littermat_disp').show();
 		$('#fabric-option').show();
 		$('#loungepad').show();
-		var litterpanCharge = 29;
+		var litterpanCharge = 15;
 		var litterpanType = 'Include Littermat';
-		var startPrice = 479;
+		var startPrice = 449;
 		var fabricCharge = 39;
 		var fleeceCharge = 39;
 		var clothCharge = 0;
@@ -772,7 +769,7 @@ var litterpanCharge = 0;
 		var itemPrice = startPrice;
 		var imagePath = 'css/images/preview/compact';	
 		$('#buy_button').html("");
-		$('#buy_button').html("<input type='hidden' name='on0' value='Entrance' /><input type='hidden' name='on2' value='Grass Cloth' /><input type='hidden' name='on5' value='Lounge Pad' /><input type='hidden' name='on3' value='Fleece Pad' />");
+		$('#buy_button').html("<input type='hidden' name='on0' value='Entrance' /><input type='hidden' name='on2' value='Door Finish' /><input type='hidden' name='on5' value='Lounge Pad' /><input type='hidden' name='on3' value='Fleece Pad' />");
 		
 		
 	}  else if (itemValue == "circa50Diner") {
@@ -788,7 +785,7 @@ var litterpanCharge = 0;
 		
 		
 	}   else if (itemValue == "console") {
-	 	var itemBuy = "Console Table/Scratcher";
+	 	var itemBuy = "Circa50: Console";
 	 	$('.carpet_disp').show();
 		
 		var startPrice = 399;
