@@ -759,7 +759,7 @@ var litterpanCharge = 0;
 		$('.littermat_disp').show();
 		$('#fabric-option').show();
 		$('#loungepad').show();
-		var litterpanCharge = 15;
+		var litterpanCharge = 29;
 		var litterpanType = 'Include Littermat';
 		var startPrice = 449;
 		var fabricCharge = 39;
