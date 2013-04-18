@@ -49,7 +49,7 @@
       </div>
     </script>
 
-    
+
 
 
     <script type="text/x-handlebars" data-template-name="tables/index">
@@ -58,7 +58,7 @@
 
     <script type="text/x-handlebars" data-template-name="_tableMenu">
       <h2>Tables</h2>
-      
+
       {{#each table in controller}}
       {{#linkTo "table" table class="panel six columns"}} {{ table.id }}{{/linkTo}}
       {{/each}}
@@ -66,7 +66,7 @@
 
     <script type="text/x-handlebars" data-template-name="_productMenu">
       <h2>Products</h2>
-      
+
       {{#each product in controller}}
       {{#linkTo "product" product class="panel six columns"}} {{ product.name }}{{/linkTo}}
       {{/each}}
@@ -74,7 +74,7 @@
 
     <script type="text/x-handlebars" data-template-name="product">
       <div class="row">
-        
+
         <div class="nine columns">
           <h2>Product: <span>{{ name }}</span></h2>
           <ul><li>{{{ description }}}</li>
@@ -90,13 +90,13 @@
       <ul id="customer-tab">
         {{#each addonItem in addonItems}}
           <li><h3>{{ addonItem.name }}</h3></li>
-          {{view Ember.Select 
+
+          {{view Ember.Select
             contentBinding='addonItem.choices'
-            selectionBinding='addonItem.choices'
-
-
+            optionLabelPath="content.content"
+            optionValuePath="content.id"
           }}
-          
+
         {{/each}}
 
       </ul>
@@ -107,14 +107,14 @@
          optionLabelPath="content.selection"
          optionValuePath="content.id"
          prompt="type"}}
-  {{/each}}      
+  {{/each}}
 
   <p>Selected: {{App.selectedAddonSelectionsController.addonselections.selection}}
     (ID: {{App.selectedAddonSelectionsController.addonselections.id}})</p>
     </script>
 
-    
-    
+
+
     <script src="js/libs/jquery-1.8.3.min.js"></script>
     <script src="js/libs/handlebars-1.0.0.rc.2.js"></script>
     <script src="js/libs/ember.js"></script>

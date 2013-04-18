@@ -8,7 +8,7 @@ App.Router.map(function() {
   this.resource('products', function() {
     this.resource('product', { path: ':product_id' });
   });
-  
+
 });
 
 
@@ -24,12 +24,12 @@ App.ProductRoute = Ember.Route.extend({
 });
 
 
- 
-App.TableController = Ember.ObjectController.extend(); 
+
+App.TableController = Ember.ObjectController.extend();
 App.ProductController = Ember.ObjectController.extend();
 App.OptionsController = Ember.ObjectController.extend();
 
- 
+
 // View Helpers
 Ember.Handlebars.registerBoundHelper('money', function(value) {
   return (value % 100 === 0 ?
@@ -63,7 +63,9 @@ App.AddonItem = DS.Model.extend({
   });
 
 App.AddonChoices = DS.Model.extend({
-  name: DS.attr('string')
+  addonItem: DS.belongsTo('App.AddonItem'),
+  name: DS.attr('string'),
+  content: DS.attr('string')
   });
 
 App.AddonSelections = Ember.Object.extend({
@@ -152,7 +154,7 @@ App.Addons.FIXTURES = [{
 App.AddonItem.FIXTURES = [{
   id: 1,
   name: 'Scratch Pad',
-  choices: ['Bark', 'Teal', 'Tangerine']
+  choices: [1, 2, 3] //['Bark', 'Teal', 'Tangerine']
 }, {
   id: 2,
   name: 'Entrance',
@@ -167,10 +169,11 @@ App.AddonItem.FIXTURES = [{
   choices: ['Chipper Black', 'Chipper Stone']
 }];
 
-App.AddonChoices.FIXTURES = [{
-  id:1,
-  name:'hello'
-}]
+App.AddonChoices.FIXTURES = [
+  { id:1, content: 'Bark' },
+  { id:2, content: 'Teal' },
+  { id:3, content: 'Tangerine' }
+];
 
 
 
