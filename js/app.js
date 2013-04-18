@@ -63,12 +63,14 @@ App.AddonItem = DS.Model.extend({
   });
 
 App.AddonChoices = DS.Model.extend({
+
   addonItem: DS.belongsTo('App.AddonItem'),
   name: DS.attr('string'),
   content: DS.attr('string')
+
   });
 
-App.AddonSelections = Ember.Object.extend({
+/*App.AddonSelections = Ember.Object.extend({
   id: null,
   type: null,
   selection: null
@@ -92,7 +94,7 @@ App.addonsController = Ember.ArrayController.create({
     App.AddonSelections.create({id:201, selection:'round'}),
  ],
 })
-
+*/
 App.Product.FIXTURES = [{
   id: 1,
   addons: 1,
@@ -154,20 +156,23 @@ App.Addons.FIXTURES = [{
 App.AddonItem.FIXTURES = [{
   id: 1,
   name: 'Scratch Pad',
+
   choices: [1, 2, 3] //['Bark', 'Teal', 'Tangerine']
+
 }, {
   id: 2,
   name: 'Entrance',
-  choices: ['Circle', 'Rectangle']
+  choices: [1]
 }, {
   id: 3,
   name: 'Door Finish',
-  choices: ['Walnut', 'White']
+  choices: [1]
 }, {
   id: 4,
   name: 'Exterior Lounge Pad',
-  choices: ['Chipper Black', 'Chipper Stone']
+  choices: [1]
 }];
+
 
 App.AddonChoices.FIXTURES = [
   { id:1, content: 'Bark' },

@@ -91,6 +91,7 @@
         {{#each addonItem in addonItems}}
           <li><h3>{{ addonItem.name }}</h3></li>
 
+
           {{view Ember.Select
             contentBinding='addonItem.choices'
             optionLabelPath="content.content"
