@@ -11,24 +11,30 @@ App.Router.map(function() {
 
 });
 
+App.IndexRoute = Ember.Route.extend({
+  setupController: function() {
+    this.controllerFor('slideshow').set('model', App.Slideshow.find());
+    this.controllerFor('allProducts').set('model', App.Product.find());
+  }
+});
 
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
     return App.Product.find();
   }
 });
+
 App.ProductRoute = Ember.Route.extend({
   model: function(params) {
     return App.Product.find(params.product_id);
   }
 });
 
-
-
 App.TableController = Ember.ObjectController.extend();
 App.ProductController = Ember.ObjectController.extend();
 App.OptionsController = Ember.ObjectController.extend();
-
+App.AllProductsController = Ember.ArrayController.extend();
+App.SlideshowController = Ember.ArrayController.extend();
 
 // View Helpers
 Ember.Handlebars.registerBoundHelper('money', function(value) {
@@ -72,11 +78,15 @@ App.AddonSelections = Ember.Object.extend({
   id: null,
   type: null,
   selection: null
-})
+});
+
+App.Slideshow = DS.Model.extend({
+  src: DS.attr('string')
+});
 
 App.selectedAddonSelectionsController = Ember.Object.create({
   addonselections: null
-})
+});
 
 App.addonsController = Ember.ArrayController.create({
  id:1,
@@ -176,5 +186,12 @@ App.AddonChoices.FIXTURES = [
 ];
 
 
-
+App.Slideshow.FIXTURES = [
+  { id: 666,
+    src: 'http://placekitten.com/200/300' },
+  { id: 667,
+    src: 'http://placekitten.com/300/300' },
+  { id: 668,
+    src: 'http://placekitten.com/400/300' }
+]
 
