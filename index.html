@@ -9,7 +9,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Ordr: Rstaurant Mnu Systm</title>
+    <title>Modernist Cat: Made for pets. Designed for you.</title>
 
     <!-- Included CSS Files (Compressed) -->
     <link rel="stylesheet" href="css/foundation.css">
@@ -20,12 +20,58 @@
     <script type="text/x-handlebars" data-template-name="application">
       <div class="row">
         <div class="twelve columns">
-          <h1>Ordr</h1>
-          <hr>
-          <p>{{outlet}}</p>
+          <h1>{{#linkTo index}}modernistcat{{/linkTo}}</h1>
+          <p>made for pets. designed for you.</p>
+          <nav><ul><li>ship<li>about us<li>FAQ<li>FB<li>Twitter<li>Pinterest</ul></nav>
+
+          <div id="content">{{outlet}}</div>
         </div>
       </div>
+      <div id="footer">Copyright 2013 Modernist Cat | site designed and developed by Patty O'Hara</div>
     </script>
+
+  <script type="text/x-handlebars" data-template-name="index">
+    <div>{{#linkTo products}}Products{{/linkTo}}</div>
+
+    {{ render "slideshow" }}
+
+    <div class="about-us">
+      <h3>About Us</h3>
+      <p>Seattle-based Modernist Cat designs modern pet furniture and accessories – tailored to please your cats (& dogs!) without compromising your exquisite home décor!</p>
+
+      <a href="#">More...</a>
+    </div>
+    <div class="testimonials">
+      <p>Don't just take our word for it...<br />
+      Style makers all over the web have taken notice of our modern pet furniture. Here's the latest:</p>
+      <ul>
+        <li>Eichler Network: Meow Century Modern
+        <li>Wired Magazine: Wish List: The Wired Staff’s Most Wanted
+        <li>Brit + Co: The Britlist</ul>
+    </div>
+
+    {{ render "allProducts" }}
+  </script>
+
+    <script type="text/x-handlebars" data-template-name="slideshow">
+     <ul>
+     {{#each controller}}
+
+
+       <li style="float: left"><img {{bindAttr src="this.src"}}></li>
+      {{/each}}
+    <ul>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="allProducts">
+  <h2>The Circa50 Collection</h2>
+  <p>Designed with you and your pet in mind; our mid-century modern inspired line of litter box covers and dual-purpose furniture caters to your sense of style AND your need to spoil your pet! </p>
+  <ul>
+    {{#each controller}}
+      <li>{{#linkTo "product" this}}{{this.name}}{{/linkTo}} | {{this.price}}</li>
+    {{/each}}
+    <ul>
+  </script>
 
     <script type="text/x-handlebars" data-template-name="tables">
       <div class="row">
