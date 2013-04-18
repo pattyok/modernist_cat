@@ -65,43 +65,31 @@ App.Addons = DS.Model.extend({
 
 App.AddonItem = DS.Model.extend({
   name: DS.attr('string'),
+  selected: DS.belongsTo('App.AddonItem'),
   choices: DS.hasMany('App.AddonChoices')
   });
 
 App.AddonChoices = DS.Model.extend({
+
   addonItem: DS.belongsTo('App.AddonItem'),
   name: DS.attr('string'),
   content: DS.attr('string')
+
   });
 
 App.AddonSelections = Ember.Object.extend({
   id: null,
-  type: null,
-  selection: null
-});
+  name: null,
+  content: null
+})
 
 App.Slideshow = DS.Model.extend({
   src: DS.attr('string')
 });
 
-App.selectedAddonSelectionsController = Ember.Object.create({
-  addonselections: null
+App.selectedAddonItemController = Ember.Object.create({
+  AddonSelections: null
 });
-
-App.addonsController = Ember.ArrayController.create({
- id:1,
- type:'Scratch Pad',
- content:[
-    App.AddonSelections.create({id:100, selection:'teal'}),
-    App.AddonSelections.create({id:101, selection:'yellow'}),
- ],
- id:2,
- type:'Door Type',
- content:[
-    App.AddonSelections.create({id:200, selection:'square'}),
-    App.AddonSelections.create({id:201, selection:'round'}),
- ],
-})
 
 App.Product.FIXTURES = [{
   id: 1,
@@ -143,46 +131,58 @@ App.Product.FIXTURES = [{
 
 App.Addons.FIXTURES = [{
   id:1,
-  addonItems:[1]
+  addonItems:[100]
 }, {
   id:2,
-  addonItems:[2,4]
+  addonItems:[200,400]
 }, {
   id:3,
-  addonItems:[3,4]
+  addonItems:[300,400]
 }, {
   id:4,
-  addonItems:[1,4]
+  addonItems:[100,400]
 }, {
   id:5,
-  addonItems:[1,2,3]
+  addonItems:[100,200,300]
 }, {
   id:6,
-  addonItems:[1,4]
+  addonItems:[100,400]
 }]
 
 App.AddonItem.FIXTURES = [{
-  id: 1,
+  id: 100,
   name: 'Scratch Pad',
-  choices: [1, 2, 3] //['Bark', 'Teal', 'Tangerine']
+  selected: null,
+  choices: [101, 102, 103] //['Bark', 'Teal', 'Tangerine']
 }, {
-  id: 2,
+  id: 200,
   name: 'Entrance',
-  choices: ['Circle', 'Rectangle']
+  selected: null,
+  choices: [201, 202]
 }, {
-  id: 3,
+  id: 300,
   name: 'Door Finish',
-  choices: ['Walnut', 'White']
+  selected: null,
+  choices: [301, 302]
 }, {
-  id: 4,
+  id: 400,
   name: 'Exterior Lounge Pad',
-  choices: ['Chipper Black', 'Chipper Stone']
+  selected: null,
+  choices: [401, 402, 403]
 }];
 
+
 App.AddonChoices.FIXTURES = [
-  { id:1, content: 'Bark' },
-  { id:2, content: 'Teal' },
-  { id:3, content: 'Tangerine' }
+  { id:101, content: 'Bark' },
+  { id:102, content: 'Teal' },
+  { id:103, content: 'Tangerine' },
+  { id:201, content: 'Round' },
+  { id:202, content: 'Square' },
+  { id:301, content: 'White' },
+  { id:302, content: 'Maple' },
+  { id:401, content: 'Chipper Black' },
+  { id:402, content: 'Chipper White' },
+  { id:403, content: 'Chipper Grey' }
 ];
 
 

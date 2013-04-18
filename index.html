@@ -137,12 +137,15 @@
         {{#each addonItem in addonItems}}
           <li><h3>{{ addonItem.name }}</h3></li>
 
+
           {{view Ember.Select
             contentBinding='addonItem.choices'
+            selectionBinding="addonItem.selected"
             optionLabelPath="content.content"
             optionValuePath="content.id"
           }}
-
+        <p>Selected: {{addonItem.selected.content}}
+        (ID: {{addonItem.selected.id}})</p>
         {{/each}}
 
       </ul>
@@ -155,8 +158,7 @@
          prompt="type"}}
   {{/each}}
 
-  <p>Selected: {{App.selectedAddonSelectionsController.addonselections.selection}}
-    (ID: {{App.selectedAddonSelectionsController.addonselections.id}})</p>
+  
     </script>
 
 
