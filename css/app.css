@@ -60,3 +60,9 @@ ul#menu li p {
 h2 span {
   padding: 0.5em 1em;
 }
+
+
+
+/*** modernistcat ****/
+nav ul li { float: left; display: block; margin-right: 15px;}
+#content { clear: both; }
