@@ -14,20 +14,26 @@
     <!-- Included CSS Files (Compressed) -->
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
     <script type="text/x-handlebars" data-template-name="application">
       <div class="row">
-        <div class="twelve columns">
-          <h1>{{#linkTo index}}modernistcat{{/linkTo}}</h1>
-          <p>made for pets. designed for you.</p>
-          <nav><ul><li>ship<li>about us<li>FAQ<li>FB<li>Twitter<li>Pinterest</ul></nav>
-
-          <div id="content">{{outlet}}</div>
+          <div class="six columns">
+          <h1 class="logo alt">{{#linkTo index}}modernistcat made for pets. designed for you.{{/linkTo}}</h1>
+          </div>
+          <div class="six columns">
+          <nav class="right"><ul class="no-bullet"><li>ship<li>about us<li>FAQ
+          <li><a href="http://www.facebook.com/pages/Seattle-WA/Modernist-Cat/115777068471250" title="Like us on Facebook"  class="social facebook alt">Facebook</a></li>
+          <li><a href="https://twitter.com/ModernistCat" class="social twitter alt" data-show-count="false" title="Follow us on Twitter">Twitter</a></li>
+          <li><a data-pin-do="buttonFollow" class="social pinterest alt" href="http://pinterest.com/modernistcat/" title="Follow us on Pinterest">Pinterest</a></li>
+          </nav>
+          </div>
         </div>
+        <div class="row" id="content">{{outlet}}</div>
       </div>
-      <div id="footer">Copyright 2013 Modernist Cat | site designed and developed by Patty O'Hara</div>
+      <div id="footer">Copyright 2013 Modernist Cat | site designed and developed by Patty OHara</div>
     </script>
 
   <script type="text/x-handlebars" data-template-name="index">
@@ -86,44 +92,34 @@
 
     <script type="text/x-handlebars" data-template-name="products">
       <div class="row">
-        <div class="four columns" id="products">
-          {{ partial "productMenu" }}
-        </div>
-        <div class="eight columns" id="order">
+        
+        <div class="twelve columns" id="order">
           {{ outlet }}
+        </div>
+        <div class="twelve columns" id="products">
+          {{ partial "productMenu" }}
         </div>
       </div>
     </script>
 
-
-
-
-    <script type="text/x-handlebars" data-template-name="tables/index">
-      <h2>Select a table at left</h2>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="_tableMenu">
-      <h2>Tables</h2>
-
-      {{#each table in controller}}
-      {{#linkTo "table" table class="panel six columns"}} {{ table.id }}{{/linkTo}}
-      {{/each}}
-    </script>
-
     <script type="text/x-handlebars" data-template-name="_productMenu">
       <h2>Products</h2>
-
+      <div class="twelve columns">
       {{#each product in controller}}
-      {{#linkTo "product" product class="panel six columns"}} {{ product.name }}{{/linkTo}}
+      {{#linkTo "product" product class="panel"}} {{ product.name }}{{/linkTo}}
       {{/each}}
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="product">
       <div class="row">
-
-        <div class="nine columns">
-          <h2>Product: <span>{{ name }}</span></h2>
-          <ul><li>{{{ description }}}</li>
+        <div class="six columns">
+          IMAGES
+        </div>
+        <div class="six columns product">
+          <h2><span>{{ name }}</span></h2>
+          <h4>{{ subtitle }}</h4>
+          <ul class="no-bullet"><li>{{{ description }}}</li>
           <li>{{ price }}</li>
           </ul>
 
@@ -144,19 +140,21 @@
             optionLabelPath="content.content"
             optionValuePath="content.id"
           }}
+            {{#each addonItem.choices }}
+              {{view Ember.RadioButton 
+                title="content.content" 
+                option="1" 
+                group="content.id" 
+                valueBinding="App.radio1"}}
+            {{/each}}
+          {{view Ember.TextField valueBinding="App.radio1"}}
+
         <p>Selected: {{addonItem.selected.content}}
         (ID: {{addonItem.selected.id}})</p>
         {{/each}}
 
       </ul>
-{{#each App.addonsController}}
-        {{view Ember.Select
-         contentBinding="App.addonsController"
-         selectionBinding="App.selectedAddonSelectionsController.addonselections"
-         optionLabelPath="content.selection"
-         optionValuePath="content.id"
-         prompt="type"}}
-  {{/each}}
+
 
   
     </script>

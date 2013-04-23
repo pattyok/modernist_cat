@@ -1,4 +1,8 @@
-var App = Ember.Application.create();
+
+
+var App = Ember.Application.create({
+    radio1: ""
+});
 
 //Router
 App.Router.map(function() {
@@ -55,7 +59,11 @@ App.Product = DS.Model.extend({
   addons: DS.belongsTo('App.Addons'),
   name: DS.attr('string'),
   price: DS.attr('number'),
-  description: DS.attr('string')
+  description: DS.attr('string'),
+  subtitle: DS.attr('string'),
+  features: DS.attr('string'),
+  specifications: DS.attr('string'),
+  shipping:DS.attr('string')
 });
 
 App.Addons = DS.Model.extend({
@@ -93,10 +101,19 @@ App.selectedAddonItemController = Ember.Object.create({
 
 App.Product.FIXTURES = [{
   id: 1,
-  addons: 1,
   name: 'Circa50:Console',
-  description: 'A console table <br /> that is also a scratching post',
-  price: '100'
+  subtitle: "Pet Scratcher",
+  description: "The Modernist Cat Circa50: Console is perfect for any room in your home and ideal for small spaces! Designed by Crystal Gregory, this dual purpose console attaches to any wall for support and provides a sleek and functional solution for keeping important items at hand while giving your modern kitty the ultimate place to perch and scratch!<br/><br/>We offer custom fit FLOR carpet tiles that are easy to replace if it get’s worn or if you just want to change the color to switch-up your décor!",
+  addons: 1,
+  price: 399,
+  features: "<li>Hand crafted with Walnut Hardwood veneer Euro Ply</li><li> Water resistant finish</li>" +
+            "<li>Slender display shelf</li><li>Open storage cubby</li>" +
+            "<li>Removable/replaceable FLOR carpet tiles in 5 colors</li>" + 
+            "<li>Easy installation – wall mounting hardware included</li>",
+  specifications: "21 1/8”W x 12”D x 34”H<br/>Display Shelf: 21 1/8”W x 7 ½ “D<br/>Open Cubby: 19 ¾”W x 7 ½ D x 6”H",
+  shipping:"Items ship free, fully assembled (Continental US only)<br/>" + 
+            "Please allow 2-3 weeks for delivery<br/>" +
+            "For international shipping rates, please contact me for a quote"
 }, {
   id: 2,
   addons: 2,
@@ -108,7 +125,7 @@ App.Product.FIXTURES = [{
   addons: 3,
   name: 'Circa50:CompactI',
   description: 'A small modern litter box',
-  price: '100'
+  price: '100'   
 }, {
   id: 4,
   addons: 4,
@@ -194,4 +211,29 @@ App.Slideshow.FIXTURES = [
   { id: 668,
     src: 'http://placekitten.com/400/300' }
 ]
+
+// Additional Javascript
+Ember.RadioButton = Ember.View.extend({
+  title: null,
+  checked: false,
+  group: "radio_button",
+  disabled: false,
+
+  classNames: ['ember-radio-button'],
+
+  defaultTemplate: Ember.Handlebars.compile('<label><input type="radio" {{ bindAttr disabled="view.disabled" name="view.group" value="view.option" checked="checked"}} />{{view.title}}</label>'),
+
+  change: function() {
+    Ember.run.once(this, this._updateElementValue);
+  },
+
+  _updateElementValue: function() {
+    var input = this.$('input:radio');
+    set(this, 'value', input.attr('value'));
+  }
+});
+
+
+
+
 

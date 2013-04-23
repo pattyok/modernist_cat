@@ -1,68 +1,60 @@
-#tables a {
-  font-weight: bold;
-  font-size: 2.5em;
-  text-align: center;
-}
+@font-face {
+    font-family: 'WhitehallRegular';
+    src: url('fonts/whitehall-webfont.eot');
+    src: url('fonts/whitehall-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/whitehall-webfont.woff') format('woff'),
+         url('fonts/whitehall-webfont.ttf') format('truetype'),
+         url('fonts/whitehall-webfont.svg#WhitehallRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
-#tables a:hover {
-  background-color: #e6e6e6;
 }
+@font-face {
+    font-family: 'RedressedRegular';
+    src: url('fonts/Redressed-webfont.eot');
+    src: url('fonts/Redressed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Redressed-webfont.woff') format('woff'),
+         url('fonts/Redressed-webfont.ttf') format('truetype'),
+         url('fonts/Redressed-webfont.svg#RedressedRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
-#tables .active:hover, .active, h2 span {
-  background-color: #333;
-  color: white;
-}
-
-ul#menu li {
-  list-style-type: none;
-  text-align: center;
-  padding-bottom: 1em;
-}
-ul#menu li div {
-  font-size: 64px;
-  line-height: 64px;
-}
-ul#menu li p {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-
-#customer-tab {
-  background-color: #f2f2f2;
-  border: 1px solid #e6e6e6;
-  padding: 1em 2em;
-}
-#customer-tab li {
-  list-style-type: none;
-  border-bottom: 1px solid #ccc;
-}
-#customer-tab li#total h3 {
-  font-weight: bold;
-}
-#customer-tab li#total {
-  border-top: 4px solid black;
-  border-bottom: 0;
-}
-#customer-tab li h3 {
-  font-weight: normal;
-}
-#customer-tab li span {
-  float: right;
-}
-
-#order {
-  border-left: 1px dashed #333;
-}
-#order h2 {
-  text-align: center;
-}
-h2 span {
-  padding: 0.5em 1em;
 }
 
 
 
 /*** modernistcat ****/
+body  {color:rgb(49, 49, 47);}
+h1, h2, h3, h4, h5, h6 {color:rgb(103, 104, 88);}
+
 nav ul li { float: left; display: block; margin-right: 15px;}
 #content { clear: both; }
+
+.alt {
+  display:block;
+  text-indent: -99999px;
+}
+
+/*header*/
+.logo {
+  background:url('images/layout/logo.png') no-repeat 0 0;
+  width:400px;
+  height:100px;
+  background-size:400px auto; 
+  float:left
+}
+.social{
+  background:url('images/layout/socialicons.png') no-repeat 0 0;
+  height:22px;
+  width:22px;
+ }
+.social.twitter {background-position:0 0;}
+.social.facebook {background-position:0 -30px;}
+
+.social.pinterest {background-position:0 -60px;}
+
+/*product pages*/
+.product h2 {
+  font-family: 'Handlee', cursive;
+  font-weight: normal;
+}
