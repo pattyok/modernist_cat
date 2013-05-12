@@ -6,11 +6,10 @@ var App = Ember.Application.create({
 
 //Router
 App.Router.map(function() {
-  this.resource('tables', function() {
-    this.resource('table', { path: ':table_id' });
-  });
   this.resource('products', function() {
-    this.resource('product', { path: ':product_id' });
+    this.resource('product', { path: ':product_id' }, function(){
+      this.route('features');
+    });
   });
 
 });
@@ -25,6 +24,12 @@ App.IndexRoute = Ember.Route.extend({
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
     return App.Product.find();
+  },
+  events: {
+    imageSwitch: function(imgID) {
+    console.log("Switch " + imgID);
+    $('.images').text('SwitchImage ' + imgID);
+  }
   }
 });
 
@@ -33,6 +38,8 @@ App.ProductRoute = Ember.Route.extend({
     return App.Product.find(params.product_id);
   }
 });
+
+
 
 App.TableController = Ember.ObjectController.extend();
 App.ProductController = Ember.ObjectController.extend();
@@ -56,7 +63,8 @@ App.Store = DS.Store.extend({
 
 
 App.Product = DS.Model.extend({
-  addons: DS.belongsTo('App.Addons'),
+  addons: DS.hasMany('App.AddonItem'),
+  options: DS.hasMany('App.AddonItem'),
   name: DS.attr('string'),
   price: DS.attr('number'),
   description: DS.attr('string'),
@@ -73,6 +81,7 @@ App.Addons = DS.Model.extend({
 
 App.AddonItem = DS.Model.extend({
   name: DS.attr('string'),
+  class: DS.attr('string'),
   selected: DS.belongsTo('App.AddonItem'),
   choices: DS.hasMany('App.AddonChoices')
   });
@@ -80,16 +89,17 @@ App.AddonItem = DS.Model.extend({
 App.AddonChoices = DS.Model.extend({
 
   addonItem: DS.belongsTo('App.AddonItem'),
-  name: DS.attr('string'),
-  content: DS.attr('string')
+  class: DS.attr('string'),
+  title: DS.attr('string')
 
   });
 
-App.AddonSelections = Ember.Object.extend({
-  id: null,
-  name: null,
-  content: null
+App.optionSelections = Ember.Object.extend({
+  type: null,
+  selection:null,
 })
+
+
 
 App.Slideshow = DS.Model.extend({
   src: DS.attr('string')
@@ -104,7 +114,8 @@ App.Product.FIXTURES = [{
   name: 'Circa50:Console',
   subtitle: "Pet Scratcher",
   description: "The Modernist Cat Circa50: Console is perfect for any room in your home and ideal for small spaces! Designed by Crystal Gregory, this dual purpose console attaches to any wall for support and provides a sleek and functional solution for keeping important items at hand while giving your modern kitty the ultimate place to perch and scratch!<br/><br/>We offer custom fit FLOR carpet tiles that are easy to replace if it get’s worn or if you just want to change the color to switch-up your décor!",
-  addons: 1,
+  options: [100],
+  addons: [100],
   price: 399,
   features: "<li>Hand crafted with Walnut Hardwood veneer Euro Ply</li><li> Water resistant finish</li>" +
             "<li>Slender display shelf</li><li>Open storage cubby</li>" +
@@ -116,10 +127,20 @@ App.Product.FIXTURES = [{
             "For international shipping rates, please contact me for a quote"
 }, {
   id: 2,
-  addons: 2,
   name: 'Circa50:Standard',
-  description: 'A modern litter box',
-  price: '100'
+  subtitle: "Litter Box Hideaway",
+  description: "The Modernist Cat Circa50: Standard is perfect for any room in your home and ideal for small spaces! Designed by Crystal Gregory, this dual purpose console attaches to any wall for support and provides a sleek and functional solution for keeping important items at hand while giving your modern kitty the ultimate place to perch and scratch!<br/><br/>We offer custom fit FLOR carpet tiles that are easy to replace if it get’s worn or if you just want to change the color to switch-up your décor!",
+  options: [200, 300],
+  addons: [400],
+  price: 599,
+  features: "<li>Hand crafted with Walnut Hardwood veneer Euro Ply</li><li> Water resistant finish</li>" +
+            "<li>Slender display shelf</li><li>Open storage cubby</li>" +
+            "<li>Removable/replaceable FLOR carpet tiles in 5 colors</li>" + 
+            "<li>Easy installation – wall mounting hardware included</li>",
+  specifications: "21 1/8”W x 12”D x 34”H<br/>Display Shelf: 21 1/8”W x 7 ½ “D<br/>Open Cubby: 19 ¾”W x 7 ½ D x 6”H",
+  shipping:"Items ship free, fully assembled (Continental US only)<br/>" + 
+            "Please allow 2-3 weeks for delivery<br/>" +
+            "For international shipping rates, please contact me for a quote"
 }, {
   id: 3,
   addons: 3,
@@ -169,11 +190,13 @@ App.Addons.FIXTURES = [{
 App.AddonItem.FIXTURES = [{
   id: 100,
   name: 'Scratch Pad',
+  class: 'scratch',
   selected: null,
-  choices: [101, 102, 103] //['Bark', 'Teal', 'Tangerine']
+  choices: [101, 102, 103, 104, 105] //['Bark', 'Teal', 'Tangerine']
 }, {
   id: 200,
   name: 'Entrance',
+  class: 'entrance',
   selected: null,
   choices: [201, 202]
 }, {
@@ -190,16 +213,18 @@ App.AddonItem.FIXTURES = [{
 
 
 App.AddonChoices.FIXTURES = [
-  { id:101, content: 'Bark' },
-  { id:102, content: 'Teal' },
-  { id:103, content: 'Tangerine' },
-  { id:201, content: 'Round' },
-  { id:202, content: 'Square' },
-  { id:301, content: 'White' },
-  { id:302, content: 'Maple' },
-  { id:401, content: 'Chipper Black' },
-  { id:402, content: 'Chipper White' },
-  { id:403, content: 'Chipper Grey' }
+  { id:101, class: 'scratch101',  title: 'Bark' },
+  { id:102, class: 'scratch102', title: 'Teal' },
+  { id:103, class: 'scratch103', title: 'Tangerine' },
+  { id:104, class: 'scratch104', title: 'Bone' },
+  { id:105, class: 'scratch105', title: 'Kiwi' },
+  { id:201, class: 'round', title: 'Round' },
+  { id:202, class: 'square', title: 'Square' },
+  { id:301, class: 'white', title: 'White' },
+  { id:302, class: 'maple', title: 'Maple' },
+  { id:401, class: 'chipperBlack', title: 'Chipper Black' },
+  { id:402, class: 'chipperWhite', title: 'Chipper White' },
+  { id:403, class: 'chipperGrey', title: 'Chipper Grey' }
 ];
 
 
@@ -213,6 +238,13 @@ App.Slideshow.FIXTURES = [
 ]
 
 // Additional Javascript
+/*{{view Ember.RadioButton 
+        title="content.content" 
+        option="1" 
+        group="content.id" 
+        valueBinding="App.radio1"}}
+    {{/each}}*/
+
 Ember.RadioButton = Ember.View.extend({
   title: null,
   checked: false,
@@ -233,7 +265,48 @@ Ember.RadioButton = Ember.View.extend({
   }
 });
 
+App.Options= Ember.View.extend({
+  layoutName: 'options',
+  selection:null
+})
 
+App.Tiles = Ember.View.extend({
+  type:null,
+  id:null,
+  isSelected: false,
+  click: function(evt) {
+    this.get('controller').send('imageSwitch', this.id);
+    
+    var selected = this.get('id');
+    
+    App.optionSelections.pushObject({type: this.type, selected: selected})
+    
+    console.log(optionSelections.length)
+    this.set('isSelected', true);
+  },
+  tagName:'li',
+  attributeBindings: ['title'],
+  classNameBindings: ['type', 'title', 'tileClass', 'isSelected:selected'],
+  tileClass: function(){
+    return  this.get('type') + this.get('id')
+  }.property('type', 'id'),
+  _updateSelectedValue: function() {
+    var selectedOption = this.id;
+    options.selection = selectedOption;
+    console.log(selectedOption)
+  }
+});
+
+App.SelectionTiles = Ember.CollectionView.extend({
+  tagName: 'ul',
+  content:null,
+  type:content.name,
+  classNameBindings: [':optionTiles', ':no-bullet'],
+  itemViewClass: Ember.View.extend({
+    classNameBindings:['view.type']
+  })
+
+})
 
 
 

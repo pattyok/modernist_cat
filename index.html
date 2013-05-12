@@ -113,50 +113,70 @@
 
     <script type="text/x-handlebars" data-template-name="product">
       <div class="row">
-        <div class="six columns">
+        <div class="six columns images">
           IMAGES
         </div>
         <div class="six columns product">
           <h2><span>{{ name }}</span></h2>
           <h4>{{ subtitle }}</h4>
-          <ul class="no-bullet"><li>{{{ description }}}</li>
-          <li>{{ price }}</li>
+          <ul class="no-bullet">
+          <li>{{{ description }}}</li>
           </ul>
+        
+          <div class="six columns">
+            <h5>Configuration Options</h5>
+              {{#each addonItem in options}}
+                {{ collection App.SelectionTiles contentBinding='addonItem.choices' }}
 
-          {{ render "addons" addons }}
-        </div>
+                
+              
+                {{#view App.Options nameBinding= 'addonItem.name'}}
+                      {{#each addonChoices in addonItem.choices}}
+                        {{view App.Tiles 
+                            titleBinding= 'addonChoices.title'  
+                            idBinding= 'addonChoices.id'
+                            typeBinding= 'addonItem.class' }}
+
+                      {{/each}} 
+                {{/view}}
+              
+              {{/each}}
+          </div>
+          <div class="six columns">
+            <h5>Addons</h5>
+
+          </div>
+
+          
+        <div class="row">
+        <div class="twelve columns prices">
+          <span id="price">${{ price }}</span>
+          <div class="right button">Add to cart</div>
+         </div>
+        <div class="tabs clear">
+        <ul class="no-bullet tabs"><li>Features</li><li>Specifications</li><li>Shipping</li></ul>
+          <div >
+            <ul class="features">
+            {{{ features }}}</ul>
+          </div>
+          <div>
+            <ul class="specifications">
+            {{{ specifications }}}</ul>
+          </div>
+          <div class="shipping">
+            <ul class="shipping">
+            {{{ shipping }}}</ul>
+          </div>
+      </div>
       </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="addons">
-      <ul id="customer-tab">
-        {{#each addonItem in addonItems}}
-          <li><h3>{{ addonItem.name }}</h3></li>
-
-
-          {{view Ember.Select
-            contentBinding='addonItem.choices'
-            selectionBinding="addonItem.selected"
-            optionLabelPath="content.content"
-            optionValuePath="content.id"
-          }}
-            {{#each addonItem.choices }}
-              {{view Ember.RadioButton 
-                title="content.content" 
-                option="1" 
-                group="content.id" 
-                valueBinding="App.radio1"}}
-            {{/each}}
-          {{view Ember.TextField valueBinding="App.radio1"}}
-
-        <p>Selected: {{addonItem.selected.content}}
-        (ID: {{addonItem.selected.id}})</p>
-        {{/each}}
-
-      </ul>
-
-
-  
+    <script type="text/x-handlebars" data-template-name="options">
+          <h6>{{ view.name }}</h6>
+            <ul class="optiontiles no-bullet">
+              {{ yield }}
+            </ul>
+          <div> {{ view.selection }} </div>
     </script>
 
 
